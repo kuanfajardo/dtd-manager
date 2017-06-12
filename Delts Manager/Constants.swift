@@ -16,12 +16,18 @@ struct Constants {
         case incomplete = "Incomplete"
         case unassigned = "Unassigned"
     }
-    
     enum Roles {
         case hm
         case bouncing
         case checker
         case social
         case admin
+    }
+    
+    enum PartyDutyStatus : String {
+        case complete = "Complete"
+        case punted = "Incomplete"
+        case unchecked = "Unchecked"
+        case unassigned = "Unassigned"
     }
 }

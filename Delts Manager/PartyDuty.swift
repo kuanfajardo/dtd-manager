@@ -14,12 +14,12 @@ class PartyDuty {
     var endTime : NSDate
     let name : String
     let desc : String
-    var user : User
+    var user : User?
     var giver : User
-    var completed : Bool
+    var status : Constants.PartyDutyStatus
     
     // Initialization
-    init(giver : User, startTime : NSDate, endTime : NSDate, user : User, name : String, desc : String) {
+    init(giver : User, startTime : NSDate, endTime : NSDate, name : String, desc : String) {
         
         self.giver = giver
         
@@ -29,16 +29,16 @@ class PartyDuty {
         self.name = name
         self.desc = desc
         
-        self.user = user
-        self.completed = false
+        self.status = .unassigned
     }
     
     func checkOff() -> Void {
-        self.completed = true
+        self.status = .complete
     }
     
     func punt() -> Void {
-        self.completed = false
+        self.status = .punted
+        // TODO actually create punt
     }
     
     func getStartTime() -> NSDate {
@@ -61,12 +61,12 @@ class PartyDuty {
         return self.giver
     }
     
-    func getUser() -> User {
+    func getUser() -> User? {
         return self.user
     }
     
-    func isCompleted() -> Bool {
-        return self.completed
+    func getStatus() -> Constants.PartyDutyStatus {
+        return self.status
     }
 
 }
