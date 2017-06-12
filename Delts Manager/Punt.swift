@@ -18,11 +18,12 @@ class Punt {
     var madeUp : Bool
     
     // Initialization
-    init(giver : User, duty : Duty, comment : String) {
+    init(giver : User, user : User, duty : Duty, comment : String) {
         
         self.date = Date()
             
         self.giver = giver
+        self.user = user
         self.duty = duty
         self.comment = comment
         
