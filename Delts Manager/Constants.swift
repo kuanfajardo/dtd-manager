@@ -16,4 +16,12 @@ struct Constants {
         case incomplete = "Incomplete"
         case unassigned = "Unassigned"
     }
+    
+    enum Roles {
+        case hm
+        case bouncing
+        case checker
+        case social
+        case admin
+    }
 }

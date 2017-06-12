@@ -17,6 +17,7 @@ class User {
     var duties : [String] // TODO: replace with [Duty]
     var punts : [String] // TODO: replace with [Punt]
     var partyDuties: [String] // TODO: replace with [PartyDuty]
+    var permissions: Set<Constants.Roles>
     
     // Initialization
     init(firstName: String, lastName: String, year: Int, email: String) {
@@ -28,5 +29,6 @@ class User {
         self.duties = []
         self.punts = []
         self.partyDuties = []
+        self.permissions = []
     }
 }
