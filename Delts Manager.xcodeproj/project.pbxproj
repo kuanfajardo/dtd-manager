@@ -15,6 +15,7 @@
 		56C94E411EEDEF4300A9BC2F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 56C94E3F1EEDEF4300A9BC2F /* LaunchScreen.storyboard */; };
 		56C94E4A1EEE23F600A9BC2F /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56C94E491EEE23F600A9BC2F /* User.swift */; };
 		56C94E4C1EEE39B000A9BC2F /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56C94E4B1EEE39B000A9BC2F /* Constants.swift */; };
+		7F28BAAF1EEE3C6300158128 /* Punt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F28BAAE1EEE3C6300158128 /* Punt.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		56C94E421EEDEF4300A9BC2F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		56C94E491EEE23F600A9BC2F /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		56C94E4B1EEE39B000A9BC2F /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		7F28BAAE1EEE3C6300158128 /* Punt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Punt.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +79,7 @@
 			isa = PBXGroup;
 			children = (
 				56C94E491EEE23F600A9BC2F /* User.swift */,
+				7F28BAAE1EEE3C6300158128 /* Punt.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -158,6 +161,7 @@
 				56C94E4A1EEE23F600A9BC2F /* User.swift in Sources */,
 				56C94E361EEDEF4300A9BC2F /* ViewController.swift in Sources */,
 				56C94E3C1EEDEF4300A9BC2F /* Delts_Manager.xcdatamodeld in Sources */,
+				7F28BAAF1EEE3C6300158128 /* Punt.swift in Sources */,
 				56C94E341EEDEF4300A9BC2F /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -324,6 +328,7 @@
 				56C94E471EEDEF4300A9BC2F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
