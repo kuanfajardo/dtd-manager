@@ -13,7 +13,7 @@ class Duty {
     let dutyName : String
     let date : NSDate
     let description : String
-    let status : DutyStatus
+    let status : Constants.DutyStatus
     let assignee : User
     let checkOffTime : NSDate
     let checker : User 
@@ -23,7 +23,7 @@ class Duty {
         self.dutyName = dutyName
         self.date = date
         self.description = description
-        self.status = status
+        self.status = .incomplete
         self.assignee = assignee
         self.checkOffTime = checkOffTime
         self.checker = checker

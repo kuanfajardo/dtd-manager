@@ -20,7 +20,7 @@ class Punt {
     // Initialization
     init(giver : User, user : User, duty : Duty, comment : String) {
         
-        self.date = Date()
+        self.date = NSDate.init()
             
         self.giver = giver
         self.user = user
