@@ -13,6 +13,8 @@
 		56C94E3C1EEDEF4300A9BC2F /* Delts_Manager.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 56C94E3A1EEDEF4300A9BC2F /* Delts_Manager.xcdatamodeld */; };
 		56C94E3E1EEDEF4300A9BC2F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 56C94E3D1EEDEF4300A9BC2F /* Assets.xcassets */; };
 		56C94E411EEDEF4300A9BC2F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 56C94E3F1EEDEF4300A9BC2F /* LaunchScreen.storyboard */; };
+		56C94E4A1EEE23F600A9BC2F /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56C94E491EEE23F600A9BC2F /* User.swift */; };
+		56C94E4C1EEE39B000A9BC2F /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56C94E4B1EEE39B000A9BC2F /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		56C94E3D1EEDEF4300A9BC2F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		56C94E401EEDEF4300A9BC2F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		56C94E421EEDEF4300A9BC2F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		56C94E491EEE23F600A9BC2F /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		56C94E4B1EEE39B000A9BC2F /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +60,7 @@
 		56C94E321EEDEF4300A9BC2F /* Delts Manager */ = {
 			isa = PBXGroup;
 			children = (
+				56C94E481EEE23D200A9BC2F /* Model */,
 				56C94E331EEDEF4300A9BC2F /* AppDelegate.swift */,
 				56C94E351EEDEF4300A9BC2F /* ViewController.swift */,
 				56C94E371EEDEF4300A9BC2F /* Main.storyboard */,
@@ -63,8 +68,17 @@
 				56C94E3F1EEDEF4300A9BC2F /* LaunchScreen.storyboard */,
 				56C94E421EEDEF4300A9BC2F /* Info.plist */,
 				56C94E3A1EEDEF4300A9BC2F /* Delts_Manager.xcdatamodeld */,
+				56C94E4B1EEE39B000A9BC2F /* Constants.swift */,
 			);
 			path = "Delts Manager";
+			sourceTree = "<group>";
+		};
+		56C94E481EEE23D200A9BC2F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				56C94E491EEE23F600A9BC2F /* User.swift */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -140,6 +154,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				56C94E4C1EEE39B000A9BC2F /* Constants.swift in Sources */,
+				56C94E4A1EEE23F600A9BC2F /* User.swift in Sources */,
 				56C94E361EEDEF4300A9BC2F /* ViewController.swift in Sources */,
 				56C94E3C1EEDEF4300A9BC2F /* Delts_Manager.xcdatamodeld in Sources */,
 				56C94E341EEDEF4300A9BC2F /* AppDelegate.swift in Sources */,
