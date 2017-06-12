@@ -10,4 +10,10 @@ import Foundation
 
 struct Constants {
     // Place constants here!
+    enum DutyStatus : String {
+        case complete = "Complete"
+        case late = "Late"
+        case incomplete = "Incomplete"
+        case unassigned = "Unassigned"
+    }
 }
