@@ -15,9 +15,11 @@
 		56C94E411EEDEF4300A9BC2F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 56C94E3F1EEDEF4300A9BC2F /* LaunchScreen.storyboard */; };
 		56C94E4A1EEE23F600A9BC2F /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56C94E491EEE23F600A9BC2F /* User.swift */; };
 		56C94E4C1EEE39B000A9BC2F /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56C94E4B1EEE39B000A9BC2F /* Constants.swift */; };
+		B94B65221C3AF3369B9BC111 /* Pods_Delts_Manager.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CED3D004C686F5F97D027273 /* Pods_Delts_Manager.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3C6D5617CFE22F9C0419D7A5 /* Pods-Delts Manager.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Delts Manager.release.xcconfig"; path = "Pods/Target Support Files/Pods-Delts Manager/Pods-Delts Manager.release.xcconfig"; sourceTree = "<group>"; };
 		56C94E301EEDEF4300A9BC2F /* Delts Manager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Delts Manager.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		56C94E331EEDEF4300A9BC2F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		56C94E351EEDEF4300A9BC2F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -28,6 +30,8 @@
 		56C94E421EEDEF4300A9BC2F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		56C94E491EEE23F600A9BC2F /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		56C94E4B1EEE39B000A9BC2F /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		CACC291344ABA10935B17954 /* Pods-Delts Manager.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Delts Manager.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Delts Manager/Pods-Delts Manager.debug.xcconfig"; sourceTree = "<group>"; };
+		CED3D004C686F5F97D027273 /* Pods_Delts_Manager.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Delts_Manager.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,6 +39,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B94B65221C3AF3369B9BC111 /* Pods_Delts_Manager.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -46,6 +51,8 @@
 			children = (
 				56C94E321EEDEF4300A9BC2F /* Delts Manager */,
 				56C94E311EEDEF4300A9BC2F /* Products */,
+				751291A4A6E8E33FA9A9454E /* Pods */,
+				6F9D9B5DA8BD895C9873EA34 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -81,6 +88,23 @@
 			name = Model;
 			sourceTree = "<group>";
 		};
+		6F9D9B5DA8BD895C9873EA34 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CED3D004C686F5F97D027273 /* Pods_Delts_Manager.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		751291A4A6E8E33FA9A9454E /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				CACC291344ABA10935B17954 /* Pods-Delts Manager.debug.xcconfig */,
+				3C6D5617CFE22F9C0419D7A5 /* Pods-Delts Manager.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -88,9 +112,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 56C94E451EEDEF4300A9BC2F /* Build configuration list for PBXNativeTarget "Delts Manager" */;
 			buildPhases = (
+				8489C312BE28718B828DF4B9 /* [CP] Check Pods Manifest.lock */,
 				56C94E2C1EEDEF4300A9BC2F /* Sources */,
 				56C94E2D1EEDEF4300A9BC2F /* Frameworks */,
 				56C94E2E1EEDEF4300A9BC2F /* Resources */,
+				15C753D2E654F21A9FA6E10F /* [CP] Embed Pods Frameworks */,
+				3A47BE845531D07789874660 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -148,6 +175,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		15C753D2E654F21A9FA6E10F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Delts Manager/Pods-Delts Manager-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3A47BE845531D07789874660 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Delts Manager/Pods-Delts Manager-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8489C312BE28718B828DF4B9 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		56C94E2C1EEDEF4300A9BC2F /* Sources */ = {
@@ -279,6 +354,7 @@
 		};
 		56C94E461EEDEF4300A9BC2F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CACC291344ABA10935B17954 /* Pods-Delts Manager.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = SN5BFX4SD3;
@@ -293,6 +369,7 @@
 		};
 		56C94E471EEDEF4300A9BC2F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3C6D5617CFE22F9C0419D7A5 /* Pods-Delts Manager.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = SN5BFX4SD3;

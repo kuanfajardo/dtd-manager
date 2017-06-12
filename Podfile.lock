@@ -1,0 +1,105 @@
+PODS:
+  - AIFlatSwitch (1.0.2)
+  - Eureka (3.0.0)
+  - FanMenu (0.6.0):
+    - Macaw
+  - Firebase/Auth (4.0.2):
+    - Firebase/Core
+    - FirebaseAuth (= 4.0.0)
+  - Firebase/Core (4.0.2):
+    - FirebaseAnalytics (= 4.0.1)
+    - FirebaseCore (= 4.0.2)
+  - Firebase/Database (4.0.2):
+    - Firebase/Core
+    - FirebaseDatabase (= 4.0.0)
+  - Firebase/Messaging (4.0.2):
+    - Firebase/Core
+    - FirebaseMessaging (= 2.0.0)
+  - FirebaseAnalytics (4.0.1):
+    - FirebaseCore (~> 4.0)
+    - FirebaseInstanceID (~> 2.0)
+    - GoogleToolboxForMac/NSData+zlib (~> 2.1)
+  - FirebaseAuth (4.0.0):
+    - FirebaseAnalytics (~> 4.0)
+    - GoogleToolboxForMac/NSDictionary+URLArguments (~> 2.1)
+    - GTMSessionFetcher/Core (~> 1.1)
+  - FirebaseCore (4.0.2):
+    - GoogleToolboxForMac/NSData+zlib (~> 2.1)
+  - FirebaseDatabase (4.0.0):
+    - FirebaseAnalytics (~> 4.0)
+  - FirebaseInstanceID (2.0.0):
+    - FirebaseCore (~> 4.0)
+  - FirebaseMessaging (2.0.0):
+    - FirebaseAnalytics (~> 4.0)
+    - FirebaseCore (~> 4.0)
+    - FirebaseInstanceID (~> 2.0)
+    - GoogleToolboxForMac/Logger (~> 2.1)
+    - Protobuf (~> 3.1)
+  - Floaty (3.0.0)
+  - Gecco (1.0.0)
+  - GoogleToolboxForMac/DebugUtils (2.1.1):
+    - GoogleToolboxForMac/Defines (= 2.1.1)
+  - GoogleToolboxForMac/Defines (2.1.1)
+  - GoogleToolboxForMac/Logger (2.1.1):
+    - GoogleToolboxForMac/Defines (= 2.1.1)
+  - GoogleToolboxForMac/NSData+zlib (2.1.1):
+    - GoogleToolboxForMac/Defines (= 2.1.1)
+  - GoogleToolboxForMac/NSDictionary+URLArguments (2.1.1):
+    - GoogleToolboxForMac/DebugUtils (= 2.1.1)
+    - GoogleToolboxForMac/Defines (= 2.1.1)
+    - GoogleToolboxForMac/NSString+URLArguments (= 2.1.1)
+  - GoogleToolboxForMac/NSString+URLArguments (2.1.1)
+  - GTMSessionFetcher/Core (1.1.10)
+  - JSSAlertView (3.0.4)
+  - LTMorphingLabel (0.5.0)
+  - Macaw (0.8.2):
+    - SWXMLHash (~> 3.0.0)
+  - Protobuf (3.3.0)
+  - RoundedSwitch (2.0.1)
+  - SnapKit (3.2.0)
+  - SwiftyJSON (3.1.4)
+  - SWXMLHash (3.0.5)
+
+DEPENDENCIES:
+  - AIFlatSwitch (~> 1.0.1)
+  - Eureka
+  - FanMenu
+  - Firebase/Auth
+  - Firebase/Core
+  - Firebase/Database
+  - Firebase/Messaging
+  - Floaty (~> 3.0.0)
+  - Gecco
+  - JSSAlertView
+  - LTMorphingLabel
+  - RoundedSwitch
+  - SnapKit (>= 3.0)
+  - SwiftyJSON
+
+SPEC CHECKSUMS:
+  AIFlatSwitch: 5ab22806eeff3e09d585c2f13d22bfa6e3427191
+  Eureka: f36fd440c3ebb7bfea0a4fbe6f16a05f1cb35906
+  FanMenu: 8d80f4684687bb38185139de8736c438924bbda6
+  Firebase: c7ad0731eab26d18a3fc547dd048b0f7cd9c63ae
+  FirebaseAnalytics: 4d7040fefc3cd8b291cde35f12cf063d7963f15d
+  FirebaseAuth: ebb6abcbabae00fc47446d690c19ce68d8484fde
+  FirebaseCore: 1a8bf6c795ad07d2918278657954ffd2552e9c17
+  FirebaseDatabase: d829b3a8c3e2ac7a16773c5df226966b0805dfc2
+  FirebaseInstanceID: 9fbf536668f4d3f0880e7438456dabd1376e294b
+  FirebaseMessaging: 227406c05b0dc9290702d2e9f18ab5528f0c2cf2
+  Floaty: d1be5d323094f0de422bb615452d00ba26ac74dd
+  Gecco: e662f949821e742997787bad7b730ccc0052e43c
+  GoogleToolboxForMac: 8e329f1b599f2512c6b10676d45736bcc2cbbeb0
+  GTMSessionFetcher: 30d874b96d0d76028f61fbd122801e3f030d47db
+  JSSAlertView: 7d8345c88e6fd8b515bc49f0fc8d8c69f6776b9c
+  LTMorphingLabel: bc170be74b219b7dae0e5543a44676d16da70ff7
+  Macaw: d01bec971b24be4232895d08482a791c403ce513
+  Protobuf: d582fecf68201eac3d79ed61369ef45734394b9c
+  RoundedSwitch: 85ea55811bbeb5747dd99e2c2290c86e820decb5
+  SnapKit: 1ca44df72cfa543218d177cb8aab029d10d86ea7
+  SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
+  SWXMLHash: 701f7d07c032089b9ff34e0352bd4fed1a24652a
+
+PODFILE CHECKSUM: 941cf64f20bdfb3979e94e8993d06ea8b7d6d4c1
+
+COCOAPODS: 1.2.1
