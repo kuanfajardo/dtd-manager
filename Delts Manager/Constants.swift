@@ -16,4 +16,11 @@ struct Constants {
         case incomplete = "Incomplete"
         case unassigned = "Unassigned"
     }
+    
+    enum PartyDutyStatus : String {
+        case complete = "Complete"
+        case punted = "Incomplete"
+        case unchecked = "Unchecked"
+        case unassigned = "Unassigned"
+    }
 }

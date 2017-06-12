@@ -16,9 +16,9 @@
 		56C94E411EEDEF4300A9BC2F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 56C94E3F1EEDEF4300A9BC2F /* LaunchScreen.storyboard */; };
 		56C94E4A1EEE23F600A9BC2F /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56C94E491EEE23F600A9BC2F /* User.swift */; };
 		56C94E4C1EEE39B000A9BC2F /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56C94E4B1EEE39B000A9BC2F /* Constants.swift */; };
-		B94B65221C3AF3369B9BC111 /* Pods_Delts_Manager.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CED3D004C686F5F97D027273 /* Pods_Delts_Manager.framework */; };
 		7F28BAAF1EEE3C6300158128 /* Punt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F28BAAE1EEE3C6300158128 /* Punt.swift */; };
 		7F28BAB31EEE41F400158128 /* PartyDuty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F28BAB21EEE41F400158128 /* PartyDuty.swift */; };
+		B94B65221C3AF3369B9BC111 /* Pods_Delts_Manager.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CED3D004C686F5F97D027273 /* Pods_Delts_Manager.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,10 +34,10 @@
 		56C94E421EEDEF4300A9BC2F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		56C94E491EEE23F600A9BC2F /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		56C94E4B1EEE39B000A9BC2F /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
-		CACC291344ABA10935B17954 /* Pods-Delts Manager.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Delts Manager.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Delts Manager/Pods-Delts Manager.debug.xcconfig"; sourceTree = "<group>"; };
-		CED3D004C686F5F97D027273 /* Pods_Delts_Manager.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Delts_Manager.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7F28BAAE1EEE3C6300158128 /* Punt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Punt.swift; sourceTree = "<group>"; };
 		7F28BAB21EEE41F400158128 /* PartyDuty.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PartyDuty.swift; sourceTree = "<group>"; };
+		CACC291344ABA10935B17954 /* Pods-Delts Manager.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Delts Manager.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Delts Manager/Pods-Delts Manager.debug.xcconfig"; sourceTree = "<group>"; };
+		CED3D004C686F5F97D027273 /* Pods_Delts_Manager.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Delts_Manager.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -149,8 +149,7 @@
 				TargetAttributes = {
 					56C94E2F1EEDEF4300A9BC2F = {
 						CreatedOnToolsVersion = 8.3.3;
-						DevelopmentTeam = 9EK24UW2CD;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
 					};
 				};
 			};
@@ -369,11 +368,11 @@
 			baseConfigurationReference = CACC291344ABA10935B17954 /* Pods-Delts Manager.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 9EK24UW2CD;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = "Delts Manager/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = edu.mit.personal.acg919449803;
+				PRODUCT_BUNDLE_IDENTIFIER = edu.mit.timhenry.thing;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -384,11 +383,11 @@
 			baseConfigurationReference = 3C6D5617CFE22F9C0419D7A5 /* Pods-Delts Manager.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 9EK24UW2CD;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = "Delts Manager/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = edu.mit.personal.acg919449803;
+				PRODUCT_BUNDLE_IDENTIFIER = edu.mit.timhenry.thing;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
