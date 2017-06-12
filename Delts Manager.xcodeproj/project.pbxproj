@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		48C9C39F1EEE3E4D006DD963 /* Duty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C9C39E1EEE3E4D006DD963 /* Duty.swift */; };
 		56C94E341EEDEF4300A9BC2F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56C94E331EEDEF4300A9BC2F /* AppDelegate.swift */; };
 		56C94E361EEDEF4300A9BC2F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56C94E351EEDEF4300A9BC2F /* ViewController.swift */; };
 		56C94E391EEDEF4300A9BC2F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 56C94E371EEDEF4300A9BC2F /* Main.storyboard */; };
@@ -16,10 +17,13 @@
 		56C94E4A1EEE23F600A9BC2F /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56C94E491EEE23F600A9BC2F /* User.swift */; };
 		56C94E4C1EEE39B000A9BC2F /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56C94E4B1EEE39B000A9BC2F /* Constants.swift */; };
 		B94B65221C3AF3369B9BC111 /* Pods_Delts_Manager.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CED3D004C686F5F97D027273 /* Pods_Delts_Manager.framework */; };
+		7F28BAAF1EEE3C6300158128 /* Punt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F28BAAE1EEE3C6300158128 /* Punt.swift */; };
+		7F28BAB31EEE41F400158128 /* PartyDuty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F28BAB21EEE41F400158128 /* PartyDuty.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		3C6D5617CFE22F9C0419D7A5 /* Pods-Delts Manager.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Delts Manager.release.xcconfig"; path = "Pods/Target Support Files/Pods-Delts Manager/Pods-Delts Manager.release.xcconfig"; sourceTree = "<group>"; };
+		48C9C39E1EEE3E4D006DD963 /* Duty.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Duty.swift; sourceTree = "<group>"; };
 		56C94E301EEDEF4300A9BC2F /* Delts Manager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Delts Manager.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		56C94E331EEDEF4300A9BC2F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		56C94E351EEDEF4300A9BC2F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -32,6 +36,8 @@
 		56C94E4B1EEE39B000A9BC2F /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		CACC291344ABA10935B17954 /* Pods-Delts Manager.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Delts Manager.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Delts Manager/Pods-Delts Manager.debug.xcconfig"; sourceTree = "<group>"; };
 		CED3D004C686F5F97D027273 /* Pods_Delts_Manager.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Delts_Manager.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7F28BAAE1EEE3C6300158128 /* Punt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Punt.swift; sourceTree = "<group>"; };
+		7F28BAB21EEE41F400158128 /* PartyDuty.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PartyDuty.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +90,9 @@
 			isa = PBXGroup;
 			children = (
 				56C94E491EEE23F600A9BC2F /* User.swift */,
+				48C9C39E1EEE3E4D006DD963 /* Duty.swift */,
+				7F28BAAE1EEE3C6300158128 /* Punt.swift */,
+				7F28BAB21EEE41F400158128 /* PartyDuty.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -140,7 +149,7 @@
 				TargetAttributes = {
 					56C94E2F1EEDEF4300A9BC2F = {
 						CreatedOnToolsVersion = 8.3.3;
-						DevelopmentTeam = SN5BFX4SD3;
+						DevelopmentTeam = 9EK24UW2CD;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -230,10 +239,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				56C94E4C1EEE39B000A9BC2F /* Constants.swift in Sources */,
+				48C9C39F1EEE3E4D006DD963 /* Duty.swift in Sources */,
 				56C94E4A1EEE23F600A9BC2F /* User.swift in Sources */,
 				56C94E361EEDEF4300A9BC2F /* ViewController.swift in Sources */,
 				56C94E3C1EEDEF4300A9BC2F /* Delts_Manager.xcdatamodeld in Sources */,
+				7F28BAAF1EEE3C6300158128 /* Punt.swift in Sources */,
 				56C94E341EEDEF4300A9BC2F /* AppDelegate.swift in Sources */,
+				7F28BAB31EEE41F400158128 /* PartyDuty.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -357,11 +369,11 @@
 			baseConfigurationReference = CACC291344ABA10935B17954 /* Pods-Delts Manager.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = SN5BFX4SD3;
+				DEVELOPMENT_TEAM = 9EK24UW2CD;
 				INFOPLIST_FILE = "Delts Manager/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "edu.mit.dtd.Delts-Manager";
+				PRODUCT_BUNDLE_IDENTIFIER = edu.mit.personal.acg919449803;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -372,11 +384,11 @@
 			baseConfigurationReference = 3C6D5617CFE22F9C0419D7A5 /* Pods-Delts Manager.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = SN5BFX4SD3;
+				DEVELOPMENT_TEAM = 9EK24UW2CD;
 				INFOPLIST_FILE = "Delts Manager/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "edu.mit.dtd.Delts-Manager";
+				PRODUCT_BUNDLE_IDENTIFIER = edu.mit.personal.acg919449803;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -401,6 +413,7 @@
 				56C94E471EEDEF4300A9BC2F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
