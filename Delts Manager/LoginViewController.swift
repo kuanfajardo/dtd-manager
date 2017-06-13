@@ -67,26 +67,14 @@ class LoginViewController: UIViewController {
         // Complete Login
         print(user.firstName + " " + user.lastName)
         
-        let controller = self.storyboard?.instantiateViewController(withIdentifier: "tabbarcontroller")
+        let controller = self.storyboard?.instantiateViewController(withIdentifier: Constants.Identifiers.Controllers.TabBarController)
+        
         self.navigationController?.pushViewController(controller!, animated: true)
     }
     
     func displayError() -> Void {
         Errors.presentError(.SignInFailedError, onController: self, withMessage: "Please try again.")
     }
-
-    
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
 
 
