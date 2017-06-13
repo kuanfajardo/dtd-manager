@@ -69,7 +69,7 @@ class LoginViewController: UIViewController {
     }
     
     func displayError() -> Void {
-        
+        Errors.presentError(.SignInFailedError, onController: self, withMessage: "Please try again.")
     }
 
     

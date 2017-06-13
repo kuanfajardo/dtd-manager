@@ -18,6 +18,7 @@
 		56C94E4C1EEE39B000A9BC2F /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56C94E4B1EEE39B000A9BC2F /* Constants.swift */; };
 		56C94E631EEF671800A9BC2F /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56C94E621EEF671800A9BC2F /* LoginViewController.swift */; };
 		56C94E651EEF6BC000A9BC2F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 56C94E641EEF6BC000A9BC2F /* GoogleService-Info.plist */; };
+		56C94E691EEF8CF400A9BC2F /* Errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56C94E681EEF8CF400A9BC2F /* Errors.swift */; };
 		7F28BAAF1EEE3C6300158128 /* Punt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F28BAAE1EEE3C6300158128 /* Punt.swift */; };
 		7F28BAB31EEE41F400158128 /* PartyDuty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F28BAB21EEE41F400158128 /* PartyDuty.swift */; };
 		B94B65221C3AF3369B9BC111 /* Pods_Delts_Manager.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CED3D004C686F5F97D027273 /* Pods_Delts_Manager.framework */; };
@@ -38,6 +39,7 @@
 		56C94E4B1EEE39B000A9BC2F /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		56C94E621EEF671800A9BC2F /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		56C94E641EEF6BC000A9BC2F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		56C94E681EEF8CF400A9BC2F /* Errors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Errors.swift; sourceTree = "<group>"; };
 		7F28BAAE1EEE3C6300158128 /* Punt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Punt.swift; sourceTree = "<group>"; };
 		7F28BAB21EEE41F400158128 /* PartyDuty.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PartyDuty.swift; sourceTree = "<group>"; };
 		CACC291344ABA10935B17954 /* Pods-Delts Manager.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Delts Manager.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Delts Manager/Pods-Delts Manager.debug.xcconfig"; sourceTree = "<group>"; };
@@ -88,6 +90,7 @@
 				56C94E3A1EEDEF4300A9BC2F /* Delts_Manager.xcdatamodeld */,
 				56C94E4B1EEE39B000A9BC2F /* Constants.swift */,
 				56C94E621EEF671800A9BC2F /* LoginViewController.swift */,
+				56C94E681EEF8CF400A9BC2F /* Errors.swift */,
 			);
 			path = "Delts Manager";
 			sourceTree = "<group>";
@@ -250,6 +253,7 @@
 				56C94E4A1EEE23F600A9BC2F /* User.swift in Sources */,
 				56C94E361EEDEF4300A9BC2F /* ViewController.swift in Sources */,
 				56C94E3C1EEDEF4300A9BC2F /* Delts_Manager.xcdatamodeld in Sources */,
+				56C94E691EEF8CF400A9BC2F /* Errors.swift in Sources */,
 				7F28BAAF1EEE3C6300158128 /* Punt.swift in Sources */,
 				56C94E341EEDEF4300A9BC2F /* AppDelegate.swift in Sources */,
 				7F28BAB31EEE41F400158128 /* PartyDuty.swift in Sources */,
