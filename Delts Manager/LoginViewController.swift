@@ -66,6 +66,9 @@ class LoginViewController: UIViewController {
     func completeLoginFor(_ user: User) -> Void {
         // Complete Login
         print(user.firstName + " " + user.lastName)
+        
+        let controller = self.storyboard?.instantiateViewController(withIdentifier: "tabbarcontroller")
+        self.navigationController?.pushViewController(controller!, animated: true)
     }
     
     func displayError() -> Void {
