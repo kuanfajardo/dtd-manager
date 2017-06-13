@@ -16,15 +16,16 @@ target 'Delts Manager' do
   # User Interface
   pod 'Eureka'
   pod 'SnapKit', '>= 3.0'
-  # pod 'FlatUIColors'
   pod 'AIFlatSwitch', '~> 1.0.1'
   pod 'RoundedSwitch'
-  pod 'FanMenu'
   pod 'LTMorphingLabel'
   # pod 'DOFavoriteButton'
+  # pod 'FanMenu'
   pod 'Floaty', '~> 3.0.0'
   pod 'Gecco'
   pod 'JSSAlertView'
+  pod 'ChameleonFramework/Swift', :git => 'https://github.com/ViccAlexander/Chameleon.git'
+  pod 'EZSwiftExtensions'
   
 
 end

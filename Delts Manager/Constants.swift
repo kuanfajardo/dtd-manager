@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import FirebaseDatabase
 
 struct Constants {
     // Place constants here!
@@ -30,4 +31,15 @@ struct Constants {
         case unchecked = "Unchecked"
         case unassigned = "Unassigned"
     }
+    
+    static var defaults: UserDefaults {
+        return UserDefaults.standard
+    }
+    
+    static var db: DatabaseReference {
+        return Database.database().reference()
+    }
+    
+    
+
 }

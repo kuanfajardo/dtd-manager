@@ -1,8 +1,10 @@
 PODS:
   - AIFlatSwitch (1.0.2)
+  - ChameleonFramework/Default (2.1.0)
+  - ChameleonFramework/Swift (2.1.0):
+    - ChameleonFramework/Default
   - Eureka (3.0.0)
-  - FanMenu (0.6.0):
-    - Macaw
+  - EZSwiftExtensions (1.9)
   - Firebase/Auth (4.0.2):
     - Firebase/Core
     - FirebaseAuth (= 4.0.0)
@@ -52,18 +54,16 @@ PODS:
   - GTMSessionFetcher/Core (1.1.10)
   - JSSAlertView (3.0.4)
   - LTMorphingLabel (0.5.0)
-  - Macaw (0.8.2):
-    - SWXMLHash (~> 3.0.0)
   - Protobuf (3.3.0)
   - RoundedSwitch (2.0.1)
   - SnapKit (3.2.0)
   - SwiftyJSON (3.1.4)
-  - SWXMLHash (3.0.5)
 
 DEPENDENCIES:
   - AIFlatSwitch (~> 1.0.1)
+  - ChameleonFramework/Swift (from `https://github.com/ViccAlexander/Chameleon.git`)
   - Eureka
-  - FanMenu
+  - EZSwiftExtensions
   - Firebase/Auth
   - Firebase/Core
   - Firebase/Database
@@ -76,10 +76,20 @@ DEPENDENCIES:
   - SnapKit (>= 3.0)
   - SwiftyJSON
 
+EXTERNAL SOURCES:
+  ChameleonFramework:
+    :git: https://github.com/ViccAlexander/Chameleon.git
+
+CHECKOUT OPTIONS:
+  ChameleonFramework:
+    :commit: acc480fbe023c6e5fe40f68593f4a70a8c4c7ad5
+    :git: https://github.com/ViccAlexander/Chameleon.git
+
 SPEC CHECKSUMS:
   AIFlatSwitch: 5ab22806eeff3e09d585c2f13d22bfa6e3427191
+  ChameleonFramework: d21a3cc247abfe5e37609a283a8238b03575cf64
   Eureka: f36fd440c3ebb7bfea0a4fbe6f16a05f1cb35906
-  FanMenu: 8d80f4684687bb38185139de8736c438924bbda6
+  EZSwiftExtensions: ce22bf6fc5c6e7c883fec413300b006e123735d0
   Firebase: c7ad0731eab26d18a3fc547dd048b0f7cd9c63ae
   FirebaseAnalytics: 4d7040fefc3cd8b291cde35f12cf063d7963f15d
   FirebaseAuth: ebb6abcbabae00fc47446d690c19ce68d8484fde
@@ -93,13 +103,11 @@ SPEC CHECKSUMS:
   GTMSessionFetcher: 30d874b96d0d76028f61fbd122801e3f030d47db
   JSSAlertView: 7d8345c88e6fd8b515bc49f0fc8d8c69f6776b9c
   LTMorphingLabel: bc170be74b219b7dae0e5543a44676d16da70ff7
-  Macaw: d01bec971b24be4232895d08482a791c403ce513
   Protobuf: d582fecf68201eac3d79ed61369ef45734394b9c
   RoundedSwitch: 85ea55811bbeb5747dd99e2c2290c86e820decb5
   SnapKit: 1ca44df72cfa543218d177cb8aab029d10d86ea7
   SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
-  SWXMLHash: 701f7d07c032089b9ff34e0352bd4fed1a24652a
 
-PODFILE CHECKSUM: 941cf64f20bdfb3979e94e8993d06ea8b7d6d4c1
+PODFILE CHECKSUM: e3981315ce67548a6e8d32d83b1c9cffecbe7d37
 
 COCOAPODS: 1.2.1

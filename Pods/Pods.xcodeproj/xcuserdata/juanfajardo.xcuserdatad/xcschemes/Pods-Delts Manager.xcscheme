@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "107270ABCEB1CC8C2097A8A4540AEEA3"
+               BlueprintIdentifier = "F9CCB52980519144AF4881C65BDE88CA"
                BuildableName = "Pods_Delts_Manager.framework"
                BlueprintName = "Pods-Delts Manager"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -45,7 +45,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "107270ABCEB1CC8C2097A8A4540AEEA3"
+            BlueprintIdentifier = "F9CCB52980519144AF4881C65BDE88CA"
             BuildableName = "Pods_Delts_Manager.framework"
             BlueprintName = "Pods-Delts Manager"
             ReferencedContainer = "container:Pods.xcodeproj">

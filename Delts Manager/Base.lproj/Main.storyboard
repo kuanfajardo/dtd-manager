@@ -13,7 +13,7 @@
         <!--Login Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController title="Login Controller" id="BYZ-38-t0r" customClass="ViewController" customModule="Delts_Manager" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Login Controller" id="BYZ-38-t0r" customClass="LoginViewController" customModule="Delts_Manager" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -22,13 +22,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="delts manager" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="48y-yh-NDb">
-                                <rect key="frame" x="46" y="50" width="152" height="110"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="36"/>
-                                <color key="textColor" red="0.90823972225189209" green="0.92638683319091797" blue="0.9317171573638916" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PFP-O5-UrG">
                                 <rect key="frame" x="37" y="267" width="300" height="30"/>
                                 <constraints>
@@ -47,8 +40,11 @@
                                 <state key="normal" title="Login">
                                     <color key="titleColor" red="0.90823972225189209" green="0.92638683319091797" blue="0.9317171573638916" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="loginPressed" destination="BYZ-38-t0r" eventType="touchUpInside" id="8KP-YD-5Gg"/>
+                                </connections>
                             </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dEP-cg-fcY">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dEP-cg-fcY">
                                 <rect key="frame" x="37" y="229" width="300" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="300" id="Lg3-FE-ln8"/>
@@ -57,19 +53,44 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="delts manager" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="48y-yh-NDb">
+                                <rect key="frame" x="46" y="90" width="152" height="86"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="152" id="nLd-QX-F2L"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="36"/>
+                                <color key="textColor" red="0.90823972225189209" green="0.92638683319091797" blue="0.9317171573638916" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.27836513519287109" green="0.18530510365962982" blue="0.59323644638061523" alpha="1" colorSpace="calibratedRGB"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="dEP-cg-fcY" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="21" id="86J-sa-RXl"/>
                             <constraint firstItem="PFP-O5-UrG" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="21" id="CZN-ir-hec"/>
                             <constraint firstItem="dEP-cg-fcY" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="209" id="K4f-7J-Vmz"/>
                             <constraint firstItem="a0E-iN-yjz" firstAttribute="top" secondItem="PFP-O5-UrG" secondAttribute="bottom" constant="15" id="Ppk-KJ-Nsq"/>
                             <constraint firstItem="PFP-O5-UrG" firstAttribute="top" secondItem="dEP-cg-fcY" secondAttribute="bottom" constant="8" id="Tki-88-Sc7"/>
+                            <constraint firstItem="48y-yh-NDb" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="70" id="ada-Z7-Pal"/>
+                            <constraint firstItem="48y-yh-NDb" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="30" id="eKs-VR-qfa"/>
                             <constraint firstItem="a0E-iN-yjz" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="21" id="sMq-ZE-zXK"/>
                         </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="qzl-b6-XMs" appends="YES" id="yTP-56-gQl"/>
+                        </connections>
                     </view>
+                    <connections>
+                        <outlet property="emailTextField" destination="dEP-cg-fcY" id="2QX-5Q-ECe"/>
+                        <outlet property="loginButton" destination="a0E-iN-yjz" id="V1A-BT-fWa"/>
+                        <outlet property="passwordTextField" destination="PFP-O5-UrG" id="Rhk-4a-2hD"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="qzl-b6-XMs">
+                    <connections>
+                        <action selector="userDidTapViewWithSender:" destination="BYZ-38-t0r" id="NGn-aL-VKm"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="-378" y="99"/>
         </scene>
