@@ -12,7 +12,6 @@ import Firebase
 
 
 class Session {
-    
     // Constants
     private let DUTIES_NODE = Constants.db.child("houseduties")
     
@@ -20,10 +19,12 @@ class Session {
     var user: User? // user currently logged in
     var isDutySheetAvailable = false
     
-    static let sharedInstance = Session() // singleton object
+    static let session = Session() // singleton object
     
     
-    // MARK: Singleton / Init Methods
+    //---------------------------------------------+
+    //             MARK: Initialization            |
+    //---------------------------------------------+
     
     // Private to prevent more than one instance of Session
     private init() {
@@ -33,12 +34,15 @@ class Session {
     // "Init" method; must be first method called when using a Session object
     func initWithUser(_ user: User) {
         self.user = user
+        
+        setUpObservers()
     }
     
     
     func setUpObservers() -> Void {
         startDutiesObserver()
         startPuntsObserver()
+        startDutySheetAvailabilityObserver()
         startDutySheetObserver()
     }
     
@@ -69,7 +73,7 @@ class Session {
             let userInfo = ["payload" : updatedPunts]
             
             // Post notification with new punts
-            let puntsNotification = Notification(name: Constants.Notifications.DMDutiesUpdatedNotification, object: nil, userInfo: userInfo)
+            let puntsNotification = Notification(name: Constants.Notifications.DMPuntsUpdatedNotification, object: nil, userInfo: userInfo)
             
             NotificationCenter.default.post(puntsNotification)
         })
@@ -107,6 +111,37 @@ class Session {
     // Get whether user of session is authorized for a given role
     func isAuthorized(forRole role: Constants.Roles) -> Bool {
         return false;
+    }
+    
+    
+    //--------------------------------------------+
+    //           MARK: Authentication             |
+    //--------------------------------------------+
+    
+    
+    static func signIn(withEmail email: String, password: String, completion: @escaping (_ error: Error?) -> Void) -> Void {
+        Auth.auth().signIn(withEmail: email, password: password) { (user, error) in
+            if (error == nil) {
+                print("login yay!")
+                let endIndex = email.characters.index(of: "@")!
+                let username = String(email.characters.prefix(upTo: endIndex))
+ 
+                Session.completeLogin(username, completion: completion)
+                
+            } else {
+                completion(error)
+            }
+        }
+    }
+    
+    static func completeLogin(_ username: String, completion: @escaping (_ error: Error?) -> Void) -> Void {
+        Constants.db.child("users").child(username).observeSingleEvent(of: .value) { (snapshot: DataSnapshot) in
+            let json = snapshot.json
+            let user = User(username: username, json: json)
+            
+            Session.session.initWithUser(user)
+            completion(nil)
+        }
     }
     
     

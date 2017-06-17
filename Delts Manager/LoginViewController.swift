@@ -27,48 +27,23 @@ class LoginViewController: UIViewController {
         passwordTextField.delegate = self;
     }
     
+    // Try to login!
     @IBAction func loginPressed() {
         let email = emailTextField.text!;
         let password = passwordTextField.text!;
         
-        // Try to authenticate
-        Auth.auth().signIn(withEmail: email, password: password) { (user, error) in
-            if (error == nil) {
-                print("login yay!")
-                self.loadUser();
+        Session.signIn(withEmail: email, password: password) { (error) in
+            if error == nil {
+                self.completeLogin()
             } else {
-                self.displayError();
+                self.displayError()
             }
         }
     }
     
-    func loadUser() -> Void {
-        let email = self.emailTextField.text!
-        
-        let endIndex = email.characters.index(of: "@")!
-        let username = String(email.characters.prefix(upTo: endIndex))
-        
-        Constants.db.child("users").child(username).observeSingleEvent(of: .value, with: { (snapshot) in
-            let dict = snapshot.value as? [String : AnyObject]
-            
-            let json = JSON(dict!)
-            
-            let firstName = json["first"].string
-            let lastName = json["last"].string
-            let year = json["pledgeyear"].int
-            
-            let user = User(firstName: firstName!, lastName: lastName!, year: year!, email: email)
-            
-            self.completeLoginFor(user)
-        })
-    }
-    
-    func completeLoginFor(_ user: User) -> Void {
-        // Complete Login
-        print(user.firstName + " " + user.lastName)
-        
+    func completeLogin() {
+        print(Session.session.user?.fullName ?? "")
         let controller = self.storyboard?.instantiateViewController(withIdentifier: Constants.Identifiers.Controllers.TabBarController)
-        
         self.navigationController?.pushViewController(controller!, animated: true)
     }
     

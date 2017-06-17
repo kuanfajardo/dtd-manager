@@ -7,28 +7,63 @@
 //
 
 import Foundation
+import EZSwiftExtensions
+import SwiftyJSON
 
 class User {
     // Instance variables
-    let firstName : String
-    let lastName : String
-    var year : Int
-    let email : String
-    var duties : [String] // TODO: replace with [Duty]
-    var punts : [String] // TODO: replace with [Punt]
-    var partyDuties: [String] // TODO: replace with [PartyDuty]
-    var permissions: Set<Constants.Roles>
+    let id: String
+    let firstName: String
+    let lastName: String
+    
+    var fullName: String {
+        return firstName + " " + lastName
+    }
+    
+    public private(set) var year: Int?
+    public private(set) var email: String?
+    public private(set) var username: String?
+        
+    var duties: [Duty] = []
+    var punts: [Punt] = []
+    var partyDuties: [PartyDuty] = []
+    var permissions: Set<Constants.Roles> = []
+    
     
     // Initialization
-    init(firstName: String, lastName: String, year: Int, email: String) {
-        self.firstName = firstName
-        self.lastName = lastName
-        self.year = year
-        self.email = email
+    init(username: String, json: JSON) {
+        self.username = username
+
+        self.id = json["id"].stringValue
+        self.firstName = json["first"].stringValue
+        self.lastName = json["last"].stringValue
+        self.year = json["year"].intValue
+        self.email = json["email"].stringValue
         
-        self.duties = []
-        self.punts = []
-        self.partyDuties = []
-        self.permissions = []
+        registerToObserveNotifications()
+    }
+    
+
+    // Setters
+    func addDuty(_ duty: Duty) {
+        self.duties.append(duty)
+    }
+    
+
+    @objc
+    func updateDuties() -> Void {
+        print("Duties Updated")
+    }
+    
+    @objc
+    func updatePunts() -> Void {
+        print("Punts Updated")
+    }
+    
+    
+    func registerToObserveNotifications() -> Void {
+        NotificationCenter.default.addObserver(self, selector: #selector(updateDuties), name: Constants.Notifications.DMDutiesUpdatedNotification, object: nil)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(updatePunts), name: Constants.Notifications.DMPuntsUpdatedNotification, object: nil)
     }
 }
