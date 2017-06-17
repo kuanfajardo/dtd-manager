@@ -41,11 +41,11 @@ class PartyDuty {
         // TODO actually create punt
     }
     
-    func getStartTime() -> NSDate {
+    func getStartTime() -> Date {
         return self.startTime
     }
     
-    func getEndTime() -> NSDate {
+    func getEndTime() -> Date {
         return self.startTime
     }
     
