@@ -47,4 +47,26 @@ struct Constants {
             static let TabBarController = "tabbarcontroller"
         }
     }
+    
+    struct Notifications {
+        static let DMDutiesUpdatedNotification = NSNotification.Name(rawValue: "UpdateDuties")
+        static let DMPuntsUpdatedNotification = NSNotification.Name(rawValue: "UpdatePunts")
+        static let DMDutySheetAvailableNotification = NSNotification.Name(rawValue: "DutySheetAvailable")
+        static let DMDutySheetClosedNotification = NSNotification.Name(rawValue: "DutySheetClosed")
+    }
+    
+    enum PuntTypes {
+        case duty
+        case social
+        case bouncing
+        case admin
+        case guide
+    }
+    
+    enum DutyUpdateTypes {
+        case new
+        case edit
+        case delete
+    }
+    
 }
