@@ -10,7 +10,7 @@ import Foundation
 
 class Punt {
     // Instance variables
-    var date : NSDate
+    var date : Date
     var duty : Duty
     let comment : String
     var user : User
@@ -20,7 +20,7 @@ class Punt {
     // Initialization
     init(giver : User, user : User, duty : Duty, comment : String) {
         
-        self.date = NSDate.init()
+        self.date = Date.init()
             
         self.giver = giver
         self.user = user
@@ -34,7 +34,7 @@ class Punt {
         self.madeUp = true
     }
     
-    func getDate() -> NSDate {
+    func getDate() -> Date {
         return self.date
     }
     

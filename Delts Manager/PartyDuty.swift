@@ -10,8 +10,8 @@ import Foundation
 
 class PartyDuty {
     // Instance variables
-    var startTime : NSDate
-    var endTime : NSDate
+    var startTime : Date
+    var endTime : Date
     let name : String
     let desc : String
     var user : User?
@@ -19,7 +19,7 @@ class PartyDuty {
     var status : Constants.PartyDutyStatus
     
     // Initialization
-    init(giver : User, startTime : NSDate, endTime : NSDate, name : String, desc : String) {
+    init(giver : User, startTime : Date, endTime : Date, name : String, desc : String) {
         
         self.giver = giver
         

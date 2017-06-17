@@ -11,15 +11,15 @@ import Foundation
 class Duty {
     // Instance variables
     let dutyName : String
-    let date : NSDate
+    let date : Date
     let description : String
     let status : Constants.DutyStatus
     let assignee : User
-    let checkOffTime : NSDate
-    let checker : User 
+    let checkOffTime : Date
+    let checker : User
     
     // Initialization
-    init(dutyName: String, date: NSDate, description: String, status: String, assignee: User, checkOffTime: NSDate, checker: User) {
+    init(dutyName: String, date: Date, description: String, status: String, assignee: User, checkOffTime: Date, checker: User) {
         self.dutyName = dutyName
         self.date = date
         self.description = description
