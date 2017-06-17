@@ -14,7 +14,14 @@ import SwiftyJSON
 // Extension for parsing FBDB as SwiftyJSON
 extension DataSnapshot {
     var json: JSON {
-        let dict = self.value as? [String : AnyObject]
-        return JSON(dict!)
+        if self.value is NSDictionary {
+            let data = self.value as! [String : Any]
+            return JSON(data)
+        } else if self.value is NSArray {
+            let data = self.value as! [Any]
+            return JSON(data)
+        } else {
+            return JSON(self.value!)
+        }
     }
 }
