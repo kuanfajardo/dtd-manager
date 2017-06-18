@@ -10,16 +10,18 @@ import Foundation
 
 class PartyDuty {
     // Instance variables
-    var startTime : Date
-    var endTime : Date
-    let name : String
-    let desc : String
+    let id: Int
+    
+    var startTime : Date?
+    var endTime : Date?
+    var name : String?
+    var desc : String?
     var user : User?
-    var giver : User
-    var status : Constants.PartyDutyStatus
+    var giver : User?
+    var status : Constants.PartyDutyStatus?
     
     // Initialization
-    init(giver : User, startTime : Date, endTime : Date, name : String, desc : String) {
+    init(giver : User, startTime : Date, endTime : Date, name : String, desc : String, id: Int) {
         
         self.giver = giver
         
@@ -30,6 +32,12 @@ class PartyDuty {
         self.desc = desc
         
         self.status = .unassigned
+        
+        self.id = id
+    }
+    
+    init(id: Int) {
+        self.id = id
     }
     
     func checkOff() -> Void {
@@ -42,31 +50,31 @@ class PartyDuty {
     }
     
     func getStartTime() -> Date {
-        return self.startTime
+        return self.startTime!
     }
     
     func getEndTime() -> Date {
-        return self.startTime
+        return self.startTime!
     }
     
     func getName() -> String {
-        return self.name
+        return self.name!
     }
     
     func getDesc() -> String {
-        return self.desc
+        return self.desc!
     }
     
     func getGiver() -> User {
-        return self.giver
+        return self.giver!
     }
     
     func getUser() -> User? {
-        return self.user
+        return self.user!
     }
     
     func getStatus() -> Constants.PartyDutyStatus {
-        return self.status
+        return self.status!
     }
 
 }

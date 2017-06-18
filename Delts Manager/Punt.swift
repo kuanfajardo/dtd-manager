@@ -10,15 +10,17 @@ import Foundation
 
 class Punt {
     // Instance variables
-    var date : Date
-    var duty : Duty
-    let comment : String
-    var user : User
-    var giver : User
-    var madeUp : Bool
+    let id: Int
+    
+    var date: Date?
+    var duty: Duty?
+    var comment: String?
+    var user: User?
+    var giver: User?
+    var madeUp: Bool?
     
     // Initialization
-    init(giver : User, user : User, duty : Duty, comment : String) {
+    init(giver: User, user: User, duty: Duty, comment: String, id: Int) {
         
         self.date = Date.init()
             
@@ -28,6 +30,12 @@ class Punt {
         self.comment = comment
         
         self.madeUp = false
+        
+        self.id = id
+    }
+    
+    init(id: Int) {
+        self.id = id
     }
     
     func makeUp() -> Void {
@@ -35,26 +43,26 @@ class Punt {
     }
     
     func getDate() -> Date {
-        return self.date
+        return self.date!
     }
     
     func getDuty() -> Duty {
-        return self.duty
+        return self.duty!
     }
     
     func getComment() -> String {
-        return self.comment
+        return self.comment!
     }
     
     func getUser() -> User {
-        return self.user
+        return self.user!
     }
     
     func getGiver() -> User {
-        return self.giver
+        return self.giver!
     }
     
     func isMadeUp() -> Bool {
-        return self.madeUp
+        return self.madeUp!
     }
 }
