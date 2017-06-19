@@ -15,12 +15,12 @@ class Punt {
     var date: Date?
     var duty: Duty?
     var comment: String?
-    var user: User?
-    var giver: User?
+    var user: DMUser?
+    var giver: DMUser?
     var madeUp: Bool?
     
     // Initialization
-    init(giver: User, user: User, duty: Duty, comment: String, id: Int) {
+    init(giver: DMUser, user: DMUser, duty: Duty, comment: String, id: Int) {
         
         self.date = Date.init()
             
@@ -54,11 +54,11 @@ class Punt {
         return self.comment!
     }
     
-    func getUser() -> User {
+    func getUser() -> DMUser {
         return self.user!
     }
     
-    func getGiver() -> User {
+    func getGiver() -> DMUser {
         return self.giver!
     }
     

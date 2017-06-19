@@ -16,12 +16,12 @@ class PartyDuty {
     var endTime : Date?
     var name : String?
     var desc : String?
-    var user : User?
-    var giver : User?
+    var user : DMUser?
+    var giver : DMUser?
     var status : Constants.PartyDutyStatus?
     
     // Initialization
-    init(giver : User, startTime : Date, endTime : Date, name : String, desc : String, id: Int) {
+    init(giver : DMUser, startTime : Date, endTime : Date, name : String, desc : String, id: Int) {
         
         self.giver = giver
         
@@ -65,11 +65,11 @@ class PartyDuty {
         return self.desc!
     }
     
-    func getGiver() -> User {
+    func getGiver() -> DMUser {
         return self.giver!
     }
     
-    func getUser() -> User? {
+    func getUser() -> DMUser? {
         return self.user!
     }
     

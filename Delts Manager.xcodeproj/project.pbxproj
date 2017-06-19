@@ -14,7 +14,7 @@
 		56C94E3C1EEDEF4300A9BC2F /* Delts_Manager.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 56C94E3A1EEDEF4300A9BC2F /* Delts_Manager.xcdatamodeld */; };
 		56C94E3E1EEDEF4300A9BC2F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 56C94E3D1EEDEF4300A9BC2F /* Assets.xcassets */; };
 		56C94E411EEDEF4300A9BC2F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 56C94E3F1EEDEF4300A9BC2F /* LaunchScreen.storyboard */; };
-		56C94E4A1EEE23F600A9BC2F /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56C94E491EEE23F600A9BC2F /* User.swift */; };
+		56C94E4A1EEE23F600A9BC2F /* DMUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56C94E491EEE23F600A9BC2F /* DMUser.swift */; };
 		56C94E4C1EEE39B000A9BC2F /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56C94E4B1EEE39B000A9BC2F /* Constants.swift */; };
 		56C94E631EEF671800A9BC2F /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56C94E621EEF671800A9BC2F /* LoginViewController.swift */; };
 		56C94E651EEF6BC000A9BC2F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 56C94E641EEF6BC000A9BC2F /* GoogleService-Info.plist */; };
@@ -37,7 +37,7 @@
 		56C94E3D1EEDEF4300A9BC2F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		56C94E401EEDEF4300A9BC2F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		56C94E421EEDEF4300A9BC2F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		56C94E491EEE23F600A9BC2F /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		56C94E491EEE23F600A9BC2F /* DMUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DMUser.swift; sourceTree = "<group>"; };
 		56C94E4B1EEE39B000A9BC2F /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		56C94E621EEF671800A9BC2F /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		56C94E641EEF6BC000A9BC2F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -104,7 +104,7 @@
 		56C94E481EEE23D200A9BC2F /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				56C94E491EEE23F600A9BC2F /* User.swift */,
+				56C94E491EEE23F600A9BC2F /* DMUser.swift */,
 				48C9C39E1EEE3E4D006DD963 /* Duty.swift */,
 				7F28BAAE1EEE3C6300158128 /* Punt.swift */,
 				7F28BAB21EEE41F400158128 /* PartyDuty.swift */,
@@ -257,7 +257,7 @@
 				56C94E631EEF671800A9BC2F /* LoginViewController.swift in Sources */,
 				56C94E4C1EEE39B000A9BC2F /* Constants.swift in Sources */,
 				48C9C39F1EEE3E4D006DD963 /* Duty.swift in Sources */,
-				56C94E4A1EEE23F600A9BC2F /* User.swift in Sources */,
+				56C94E4A1EEE23F600A9BC2F /* DMUser.swift in Sources */,
 				56C94E361EEDEF4300A9BC2F /* ViewController.swift in Sources */,
 				56C94E3C1EEDEF4300A9BC2F /* Delts_Manager.xcdatamodeld in Sources */,
 				56C94E691EEF8CF400A9BC2F /* Errors.swift in Sources */,

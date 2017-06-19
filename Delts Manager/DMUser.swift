@@ -1,5 +1,5 @@
 //
-//  User.swift
+//  DMUser.swift
 //  Delts Manager
 //
 //  Created by Juan Diego Fajardo on 6/11/17.
@@ -10,7 +10,7 @@ import Foundation
 import EZSwiftExtensions
 import SwiftyJSON
 
-class User {
+class DMUser {
     // Instance variables
     let id: String
     let firstName: String

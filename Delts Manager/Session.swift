@@ -16,7 +16,7 @@ class Session {
     private let DUTIES_NODE = Constants.db.child("houseduties")
     
     // Properties
-    var user: User? // user currently logged in
+    var user: DMUser? // user currently logged in
     var isDutySheetAvailable = false
     
     static let session = Session() // singleton object
@@ -27,12 +27,10 @@ class Session {
     //---------------------------------------------+
     
     // Private to prevent more than one instance of Session
-    private init() {
-        //
-    }
+    private init() {}
     
     // "Init" method; must be first method called when using a Session object
-    func initWithUser(_ user: User) {
+    func initWithUser(_ user: DMUser) {
         self.user = user
         
         setUpObservers()
@@ -137,7 +135,7 @@ class Session {
     static func completeLogin(_ username: String, completion: @escaping (_ error: Error?) -> Void) -> Void {
         Constants.db.child("users").child(username).observeSingleEvent(of: .value) { (snapshot: DataSnapshot) in
             let json = snapshot.json
-            let user = User(username: username, json: json)
+            let user = DMUser(username: username, json: json)
             
             Session.session.initWithUser(user)
             completion(nil)
@@ -230,7 +228,7 @@ class Session {
     
     // POST
     
-    func punt(user: User, for type: Constants.PuntTypes, options: [String : Any]?) -> Void {
+    func punt(user: DMUser, for type: Constants.PuntTypes, options: [String : Any]?) -> Void {
         
     }
     
@@ -276,7 +274,7 @@ class Session {
         return []
     }
     
-    func loadAllUsers() -> [User] {
+    func loadAllUsers() -> [DMUser] {
         return []
     }
     
