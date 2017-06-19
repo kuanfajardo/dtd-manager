@@ -44,12 +44,32 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>Graph.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>JSSAlertView.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 		</dict>
 		<key>LTMorphingLabel.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Material-com.cosmicmind.material.fonts.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Material-com.cosmicmind.material.icons.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Material.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -92,7 +112,32 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>3106EDE4A396D29EE7077A2391922078</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>3649FDDC9A8AA0D20265834988BD6CDE</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>39AA3FC7447AC6B6A131668CFF9C01CD</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>3A5897FCD2621886E495618AB901B1EF</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>45E9BBE6402F7CB04D456C25D2C38815</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>4B081E3F0BED77DE89D0B903BB004545</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -102,12 +147,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>4D5817572CC8EFD027867A2EF045BF27</key>
+		<key>5C123A74CD9D6CDA27160800BA68B01A</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>5C123A74CD9D6CDA27160800BA68B01A</key>
+		<key>5DC0A0890A57D31F9E9621337A093804</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -122,12 +167,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>769930768E845E5A8FD09CC22556CAD5</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>76BD4592010354D6C23D6ECCA20D83A8</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>82DCEACC5FA9EAC94D40EADE6100E176</key>
+		<key>8D511562A8961C5B7A5DD87BAE2374F2</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -137,22 +187,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>C61C35DFF35CEDD447F1CF223E993DB0</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>C854207DFC5C3B1BBFDEA0DF0C4A3931</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
 		<key>D368184BEED712B6A15E4767FE420BE5</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>F9CCB52980519144AF4881C65BDE88CA</key>
+		<key>FBF03E348A0F5B0D02204E525D12845A</key>
 		<dict>
 			<key>primary</key>
 			<true/>

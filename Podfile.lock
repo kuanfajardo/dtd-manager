@@ -51,9 +51,13 @@ PODS:
     - GoogleToolboxForMac/Defines (= 2.1.1)
     - GoogleToolboxForMac/NSString+URLArguments (= 2.1.1)
   - GoogleToolboxForMac/NSString+URLArguments (2.1.1)
+  - Graph (2.1.4)
   - GTMSessionFetcher/Core (1.1.10)
   - JSSAlertView (3.0.4)
   - LTMorphingLabel (0.5.0)
+  - Material (2.6.3):
+    - Material/Core (= 2.6.3)
+  - Material/Core (2.6.3)
   - Protobuf (3.3.0)
   - RoundedSwitch (2.0.1)
   - SnapKit (3.2.0)
@@ -70,8 +74,10 @@ DEPENDENCIES:
   - Firebase/Messaging
   - Floaty (~> 3.0.0)
   - Gecco
+  - Graph (~> 2.0)
   - JSSAlertView
   - LTMorphingLabel
+  - Material (~> 2.0)
   - RoundedSwitch
   - SnapKit (>= 3.0)
   - SwiftyJSON
@@ -100,14 +106,16 @@ SPEC CHECKSUMS:
   Floaty: d1be5d323094f0de422bb615452d00ba26ac74dd
   Gecco: e662f949821e742997787bad7b730ccc0052e43c
   GoogleToolboxForMac: 8e329f1b599f2512c6b10676d45736bcc2cbbeb0
+  Graph: 0f3a549c8597e6ab25a58c4a8f7276555ec5ba4d
   GTMSessionFetcher: 30d874b96d0d76028f61fbd122801e3f030d47db
   JSSAlertView: 7d8345c88e6fd8b515bc49f0fc8d8c69f6776b9c
   LTMorphingLabel: bc170be74b219b7dae0e5543a44676d16da70ff7
+  Material: af607a7ec0e9978ef85cf189a3d8ceeeb650400f
   Protobuf: d582fecf68201eac3d79ed61369ef45734394b9c
   RoundedSwitch: 85ea55811bbeb5747dd99e2c2290c86e820decb5
   SnapKit: 1ca44df72cfa543218d177cb8aab029d10d86ea7
   SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
 
-PODFILE CHECKSUM: e3981315ce67548a6e8d32d83b1c9cffecbe7d37
+PODFILE CHECKSUM: b4487a86d883e476ecd743e7849a5ef61753e19f
 
 COCOAPODS: 1.2.1

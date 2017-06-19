@@ -26,6 +26,9 @@ target 'Delts Manager' do
   pod 'JSSAlertView'
   pod 'ChameleonFramework/Swift', :git => 'https://github.com/ViccAlexander/Chameleon.git'
   pod 'EZSwiftExtensions'
+  pod 'Material', '~> 2.0'
   
+  # Data
+  pod 'Graph', '~> 2.0'
 
 end
