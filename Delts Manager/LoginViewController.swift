@@ -17,6 +17,11 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var loginButton: UIButton!
     
+    // Light Status Bar
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
+    
     // MARK: Life Cycle
     
     override func viewDidLoad() {
@@ -25,7 +30,10 @@ class LoginViewController: UIViewController {
         // Do any additional setup after loading the view.
         emailTextField.delegate = self;
         passwordTextField.delegate = self;
+        
+        self.loginButton.layer.cornerRadius = 5.0
     }
+    
     
     // Try to login!
     @IBAction func loginPressed() {
