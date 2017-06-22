@@ -18,6 +18,7 @@ class Punt {
     var user: DMUser?
     var giver: DMUser?
     var madeUp: Bool?
+    var makeupTime: Date?
     
     // Initialization
     init(giver: DMUser, user: DMUser, duty: Duty, comment: String, id: Int) {

@@ -42,7 +42,7 @@ class LoginViewController: UIViewController {
     }
     
     func completeLogin() {
-        print(Session.session.user?.fullName ?? "")
+        print(Session.session.owner?.fullName ?? "")
         let controller = self.storyboard?.instantiateViewController(withIdentifier: Constants.Identifiers.Controllers.TabBarController)
         self.navigationController?.pushViewController(controller!, animated: true)
     }

@@ -16,8 +16,9 @@ class Session {
     private let DUTIES_NODE = Constants.db.child("houseduties")
     
     // Properties
-    var user: DMUser? // user currently logged in
+    var owner: DMUser? // user currently logged in
     var isDutySheetAvailable = false
+    var allUsers: [DMUser]?
     
     static let session = Session() // singleton object
     
@@ -31,7 +32,7 @@ class Session {
     
     // "Init" method; must be first method called when using a Session object
     func initWithUser(_ user: DMUser) {
-        self.user = user
+        self.owner = user
         
         setUpObservers()
     }
@@ -47,7 +48,7 @@ class Session {
     
     // Listener for Duties
     private func startDutiesObserver() -> Void {
-        let userDutiesNode = Constants.db.child("users").child((self.user?.username)!).child("duties")
+        let userDutiesNode = Constants.db.child("users").child((self.owner?.username)!).child("duties")
         
         userDutiesNode.observe(.value, with: { (snapshot) in
             // Get new updated list of duties
@@ -63,7 +64,7 @@ class Session {
     
     // Listener for Punts
     private func startPuntsObserver() -> Void {
-        let userPuntsNode = Constants.db.child("users").child((self.user?.username)!).child("punts")
+        let userPuntsNode = Constants.db.child("users").child((self.owner?.username)!).child("punts")
         
         userPuntsNode.observe(.value, with: { (snapshot) in
             // Get new updated list of punts
@@ -138,7 +139,14 @@ class Session {
             let user = DMUser(username: username, json: json)
             
             Session.session.initWithUser(user)
-            completion(nil)
+            
+            Data.createGraphWithOwner(user) { (success: Bool, error: Error?) in
+                if error != nil {
+                    completion(nil)
+                } else {
+                    completion(error)
+                }
+            }
         }
     }
     
