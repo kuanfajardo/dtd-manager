@@ -8,8 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		48C9C39F1EEE3E4D006DD963 /* Duty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C9C39E1EEE3E4D006DD963 /* Duty.swift */; };
+		5663797D1EFB7A28005EB635 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5663797C1EFB7A28005EB635 /* TabBarController.swift */; };
+		5663797F1EFB7B48005EB635 /* OverviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5663797E1EFB7B47005EB635 /* OverviewViewController.swift */; };
+		566379811EFB7E9C005EB635 /* DutiesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 566379801EFB7E9C005EB635 /* DutiesViewController.swift */; };
+		566379831EFB7EC9005EB635 /* PuntsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 566379821EFB7EC9005EB635 /* PuntsViewController.swift */; };
+		566379851EFB7EEA005EB635 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 566379841EFB7EEA005EB635 /* SettingsViewController.swift */; };
 		56C94E341EEDEF4300A9BC2F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56C94E331EEDEF4300A9BC2F /* AppDelegate.swift */; };
-		56C94E361EEDEF4300A9BC2F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56C94E351EEDEF4300A9BC2F /* ViewController.swift */; };
 		56C94E391EEDEF4300A9BC2F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 56C94E371EEDEF4300A9BC2F /* Main.storyboard */; };
 		56C94E3C1EEDEF4300A9BC2F /* Delts_Manager.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 56C94E3A1EEDEF4300A9BC2F /* Delts_Manager.xcdatamodeld */; };
 		56C94E3E1EEDEF4300A9BC2F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 56C94E3D1EEDEF4300A9BC2F /* Assets.xcassets */; };
@@ -30,9 +34,13 @@
 /* Begin PBXFileReference section */
 		3C6D5617CFE22F9C0419D7A5 /* Pods-Delts Manager.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Delts Manager.release.xcconfig"; path = "Pods/Target Support Files/Pods-Delts Manager/Pods-Delts Manager.release.xcconfig"; sourceTree = "<group>"; };
 		48C9C39E1EEE3E4D006DD963 /* Duty.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Duty.swift; sourceTree = "<group>"; };
+		5663797C1EFB7A28005EB635 /* TabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		5663797E1EFB7B47005EB635 /* OverviewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OverviewViewController.swift; sourceTree = "<group>"; };
+		566379801EFB7E9C005EB635 /* DutiesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DutiesViewController.swift; sourceTree = "<group>"; };
+		566379821EFB7EC9005EB635 /* PuntsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PuntsViewController.swift; sourceTree = "<group>"; };
+		566379841EFB7EEA005EB635 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		56C94E301EEDEF4300A9BC2F /* Delts Manager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Delts Manager.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		56C94E331EEDEF4300A9BC2F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		56C94E351EEDEF4300A9BC2F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		56C94E381EEDEF4300A9BC2F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		56C94E3B1EEDEF4300A9BC2F /* Delts_Manager.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Delts_Manager.xcdatamodel; sourceTree = "<group>"; };
 		56C94E3D1EEDEF4300A9BC2F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -41,7 +49,7 @@
 		56C94E491EEE23F600A9BC2F /* DMUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DMUser.swift; sourceTree = "<group>"; };
 		56C94E4B1EEE39B000A9BC2F /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		56C94E621EEF671800A9BC2F /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
-		56C94E641EEF6BC000A9BC2F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		56C94E641EEF6BC000A9BC2F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../GoogleService-Info.plist"; sourceTree = "<group>"; };
 		56C94E681EEF8CF400A9BC2F /* Errors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Errors.swift; sourceTree = "<group>"; };
 		56C94E6A1EEF9DEF00A9BC2F /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		56D2ECAE1EF5B13D00DF8A7C /* Session.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
@@ -64,10 +72,102 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		56C94E271EEDEF4300A9BC2F = {
+		566379721EFB78B1005EB635 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				56C94E371EEDEF4300A9BC2F /* Main.storyboard */,
+				56C94E3F1EEDEF4300A9BC2F /* LaunchScreen.storyboard */,
+				566379731EFB78BD005EB635 /* Login */,
+				566379741EFB78C4005EB635 /* Overview */,
+				566379751EFB78D8005EB635 /* Duties */,
+				566379761EFB78DE005EB635 /* Punts */,
+				566379771EFB78E4005EB635 /* Parties */,
+				566379781EFB78EB005EB635 /* Settings */,
+				5663797C1EFB7A28005EB635 /* TabBarController.swift */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		566379731EFB78BD005EB635 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				56C94E621EEF671800A9BC2F /* LoginViewController.swift */,
+			);
+			name = Login;
+			sourceTree = "<group>";
+		};
+		566379741EFB78C4005EB635 /* Overview */ = {
+			isa = PBXGroup;
+			children = (
+				5663797E1EFB7B47005EB635 /* OverviewViewController.swift */,
+			);
+			name = Overview;
+			sourceTree = "<group>";
+		};
+		566379751EFB78D8005EB635 /* Duties */ = {
+			isa = PBXGroup;
+			children = (
+				566379801EFB7E9C005EB635 /* DutiesViewController.swift */,
+			);
+			name = Duties;
+			sourceTree = "<group>";
+		};
+		566379761EFB78DE005EB635 /* Punts */ = {
+			isa = PBXGroup;
+			children = (
+				566379821EFB7EC9005EB635 /* PuntsViewController.swift */,
+			);
+			name = Punts;
+			sourceTree = "<group>";
+		};
+		566379771EFB78E4005EB635 /* Parties */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Parties;
+			sourceTree = "<group>";
+		};
+		566379781EFB78EB005EB635 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				566379841EFB7EEA005EB635 /* SettingsViewController.swift */,
+			);
+			name = Settings;
+			sourceTree = "<group>";
+		};
+		566379791EFB7905005EB635 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
 				56C94E641EEF6BC000A9BC2F /* GoogleService-Info.plist */,
+				56C94E3D1EEDEF4300A9BC2F /* Assets.xcassets */,
+				56C94E421EEDEF4300A9BC2F /* Info.plist */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		5663797A1EFB7949005EB635 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				5663797B1EFB797B005EB635 /* Data */,
+				56C94E4B1EEE39B000A9BC2F /* Constants.swift */,
+				56C94E681EEF8CF400A9BC2F /* Errors.swift */,
+				56C94E6A1EEF9DEF00A9BC2F /* Extensions.swift */,
+				56D2ECAE1EF5B13D00DF8A7C /* Session.swift */,
+			);
+			name = Services;
+			sourceTree = "<group>";
+		};
+		5663797B1EFB797B005EB635 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				56D2ECB01EF75D2200DF8A7C /* Data.swift */,
+			);
+			name = Data;
+			sourceTree = "<group>";
+		};
+		56C94E271EEDEF4300A9BC2F = {
+			isa = PBXGroup;
+			children = (
 				56C94E321EEDEF4300A9BC2F /* Delts Manager */,
 				56C94E311EEDEF4300A9BC2F /* Products */,
 				751291A4A6E8E33FA9A9454E /* Pods */,
@@ -86,20 +186,12 @@
 		56C94E321EEDEF4300A9BC2F /* Delts Manager */ = {
 			isa = PBXGroup;
 			children = (
-				56C94E481EEE23D200A9BC2F /* Model */,
 				56C94E331EEDEF4300A9BC2F /* AppDelegate.swift */,
-				56C94E351EEDEF4300A9BC2F /* ViewController.swift */,
-				56C94E371EEDEF4300A9BC2F /* Main.storyboard */,
-				56C94E3D1EEDEF4300A9BC2F /* Assets.xcassets */,
-				56C94E3F1EEDEF4300A9BC2F /* LaunchScreen.storyboard */,
-				56C94E421EEDEF4300A9BC2F /* Info.plist */,
 				56C94E3A1EEDEF4300A9BC2F /* Delts_Manager.xcdatamodeld */,
-				56C94E4B1EEE39B000A9BC2F /* Constants.swift */,
-				56C94E621EEF671800A9BC2F /* LoginViewController.swift */,
-				56C94E681EEF8CF400A9BC2F /* Errors.swift */,
-				56C94E6A1EEF9DEF00A9BC2F /* Extensions.swift */,
-				56D2ECAE1EF5B13D00DF8A7C /* Session.swift */,
-				56D2ECB01EF75D2200DF8A7C /* Data.swift */,
+				566379721EFB78B1005EB635 /* View */,
+				5663797A1EFB7949005EB635 /* Services */,
+				56C94E481EEE23D200A9BC2F /* Model */,
+				566379791EFB7905005EB635 /* Resources */,
 			);
 			path = "Delts Manager";
 			sourceTree = "<group>";
@@ -167,7 +259,7 @@
 				TargetAttributes = {
 					56C94E2F1EEDEF4300A9BC2F = {
 						CreatedOnToolsVersion = 8.3.3;
-						DevelopmentTeam = GF48WVTN6V;
+						DevelopmentTeam = SN5BFX4SD3;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -258,17 +350,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				56C94E631EEF671800A9BC2F /* LoginViewController.swift in Sources */,
+				5663797D1EFB7A28005EB635 /* TabBarController.swift in Sources */,
 				56C94E4C1EEE39B000A9BC2F /* Constants.swift in Sources */,
 				48C9C39F1EEE3E4D006DD963 /* Duty.swift in Sources */,
 				56C94E4A1EEE23F600A9BC2F /* DMUser.swift in Sources */,
-				56C94E361EEDEF4300A9BC2F /* ViewController.swift in Sources */,
 				56C94E3C1EEDEF4300A9BC2F /* Delts_Manager.xcdatamodeld in Sources */,
 				56C94E691EEF8CF400A9BC2F /* Errors.swift in Sources */,
 				7F28BAAF1EEE3C6300158128 /* Punt.swift in Sources */,
 				56D2ECB11EF75D2200DF8A7C /* Data.swift in Sources */,
+				5663797F1EFB7B48005EB635 /* OverviewViewController.swift in Sources */,
 				56D2ECAF1EF5B13D00DF8A7C /* Session.swift in Sources */,
 				56C94E341EEDEF4300A9BC2F /* AppDelegate.swift in Sources */,
+				566379851EFB7EEA005EB635 /* SettingsViewController.swift in Sources */,
 				56C94E6B1EEF9DEF00A9BC2F /* Extensions.swift in Sources */,
+				566379831EFB7EC9005EB635 /* PuntsViewController.swift in Sources */,
+				566379811EFB7E9C005EB635 /* DutiesViewController.swift in Sources */,
 				7F28BAB31EEE41F400158128 /* PartyDuty.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -394,7 +490,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = GF48WVTN6V;
+				DEVELOPMENT_TEAM = SN5BFX4SD3;
 				INFOPLIST_FILE = "Delts Manager/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -410,7 +506,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = GF48WVTN6V;
+				DEVELOPMENT_TEAM = SN5BFX4SD3;
 				INFOPLIST_FILE = "Delts Manager/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

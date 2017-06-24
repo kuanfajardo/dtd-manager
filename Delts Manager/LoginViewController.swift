@@ -51,8 +51,10 @@ class LoginViewController: UIViewController {
     
     func completeLogin() {
         print(Session.session.owner?.fullName ?? "")
-        let controller = self.storyboard?.instantiateViewController(withIdentifier: Constants.Identifiers.Controllers.TabBarController)
-        self.navigationController?.pushViewController(controller!, animated: true)
+        
+        let controller = TabBarController(viewControllers: [OverviewViewController(), DutiesViewController(), PuntsViewController(), SettingsViewController()])
+        
+        self.navigationController?.pushViewController(controller, animated: true)
     }
     
     func displayError() -> Void {
