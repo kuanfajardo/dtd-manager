@@ -22,7 +22,7 @@ class OverviewViewController: UIViewController, DMDutyCardDelegate {
         let card = DMDutyCard()
         card.delegate = self
         
-        card.duty = Duty(dutyName: "Kitchen", date: Date(), description: "Wash the dishes, mop the floors, put away the food.", status: .complete, assignee: DMUser.init(name: "Erick Friis"), checkOffTime: nil, checker: DMUser(name: "Juan Fajardo"), id: 0)
+        card.duty = Duty(dutyName: "Kitchen", date: Date(), description: "Wash the dishes, mop the floors, put away the food.", status: .checkoffRequested, assignee: DMUser.init(name: "Erick Friis"), checkOffTime: nil, checker: DMUser(name: "Juan Fajardo"), id: 0)
         
         let card3 = DMPuntCard()
         

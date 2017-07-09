@@ -112,14 +112,18 @@ class DMDutyCard: Card {
             return "Punted!"
         case .unassigned:
             return "-";
+        case .checkoffRequested:
+            return "Checkoff requested. Waiting for checker..."
+        case .pickedUp:
+            return "Picked Up by \(duty.checker!.fullName)"
         }
     }
     
     static func checkoffImageForDuty(_ duty: Duty) -> UIImage? {
         switch duty.status! {
-        case .complete:
+        case .complete, .pickedUp:
             return Icon.check
-        case .incomplete:
+        case .incomplete, .checkoffRequested:
             return Icon.bell
         case .late:
             return Icon.close
@@ -132,11 +136,11 @@ class DMDutyCard: Card {
         switch duty.status! {
         case .complete:
             return UIColor.flatMint
-        case .incomplete:
+        case .incomplete, .checkoffRequested:
             return UIColor.flatPurple
         case .late:
             return UIColor.flatWatermelon
-        case .unassigned:
+        case .unassigned, .pickedUp:
             return UIColor.flatWhite
         }
     }

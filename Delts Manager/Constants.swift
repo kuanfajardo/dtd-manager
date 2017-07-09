@@ -15,6 +15,8 @@ struct Constants {
         case complete = "Complete"
         case late = "Late"
         case incomplete = "Incomplete"
+        case checkoffRequested = "Requesting Checkoff"
+        case pickedUp = "Picked Up"
         case unassigned = "Unassigned"
     }
     enum Roles {
