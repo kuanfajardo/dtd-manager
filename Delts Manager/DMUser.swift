@@ -43,6 +43,12 @@ class DMUser {
         registerToObserveNotifications()
     }
     
+    init(name: String) {
+        self.firstName = name
+        self.id = "-1"
+        self.lastName = ""
+    }
+    
 
     // Setters
     func addDuty(_ duty: Duty) {
