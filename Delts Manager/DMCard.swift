@@ -24,6 +24,11 @@ protocol DMPuntCardDelegate {
 
 class DMDutyCard: Card {
     
+    var duty: Duty? {
+        didSet {
+            self.refreshLayout()
+        }
+    }
     var delegate: DMDutyCardDelegate?
     var checkoffButton: FABButton?
     var timer: Timer?
@@ -36,7 +41,7 @@ class DMDutyCard: Card {
         super.init(frame: frame)
         
         // Checkoff Button
-        let checkoffButton = FABButton(image: Icon.bell, tintColor: UIColor.flatWhiteDark)
+        let checkoffButton = FABButton(image: Icon.bell, tintColor: UIColor.white)
         checkoffButton.backgroundColor = UIColor.flatWhite
         checkoffButton.pulseColor = UIColor.flatBlack
         
@@ -84,6 +89,57 @@ class DMDutyCard: Card {
         self.checkoffButton?.pulse()
     }
     
+    func refreshLayout() {
+        self.toolbar?.detail = DMDutyCard.toolbarDetailForDuty(self.duty!)
+        self.toolbar?.title = self.duty!.dutyName!
+        
+        self.checkoffButton?.image = DMDutyCard.checkoffImageForDuty(self.duty!)
+        self.checkoffButton?.backgroundColor = DMDutyCard.checkoffBackgroundColorForDuty(self.duty!)
+        
+        let contentView = self.contentView as! UILabel
+        contentView.text = self.duty!.description
+        
+        setNeedsDisplay()
+    }
+    
+    static func toolbarDetailForDuty(_ duty: Duty) -> String {
+        switch duty.status! {
+        case .complete:
+            return "Checked off by \(duty.checker!.fullName)"
+        case .incomplete:
+            return "Due by \(duty.date!) at 11:59 PM"
+        case .late:
+            return "Punted!"
+        case .unassigned:
+            return "-";
+        }
+    }
+    
+    static func checkoffImageForDuty(_ duty: Duty) -> UIImage? {
+        switch duty.status! {
+        case .complete:
+            return Icon.check
+        case .incomplete:
+            return Icon.bell
+        case .late:
+            return Icon.close
+        case .unassigned:
+            return nil
+        }
+    }
+    
+    private static func checkoffBackgroundColorForDuty(_ duty: Duty) -> UIColor {
+        switch duty.status! {
+        case .complete:
+            return UIColor.flatMint
+        case .incomplete:
+            return UIColor.flatPurple
+        case .late:
+            return UIColor.flatWatermelon
+        case .unassigned:
+            return UIColor.flatWhite
+        }
+    }
     
     // Delegate Calls
     @objc
