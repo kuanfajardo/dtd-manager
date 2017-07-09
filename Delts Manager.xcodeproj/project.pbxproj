@@ -13,6 +13,8 @@
 		566379811EFB7E9C005EB635 /* DutiesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 566379801EFB7E9C005EB635 /* DutiesViewController.swift */; };
 		566379831EFB7EC9005EB635 /* PuntsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 566379821EFB7EC9005EB635 /* PuntsViewController.swift */; };
 		566379851EFB7EEA005EB635 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 566379841EFB7EEA005EB635 /* SettingsViewController.swift */; };
+		56A3865F1EFF174700CCD3A7 /* DMCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56A3865E1EFF174700CCD3A7 /* DMCard.swift */; };
+		56A386611F02004B00CCD3A7 /* DMToolbarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56A386601F02004B00CCD3A7 /* DMToolbarController.swift */; };
 		56C94E341EEDEF4300A9BC2F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56C94E331EEDEF4300A9BC2F /* AppDelegate.swift */; };
 		56C94E391EEDEF4300A9BC2F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 56C94E371EEDEF4300A9BC2F /* Main.storyboard */; };
 		56C94E3C1EEDEF4300A9BC2F /* Delts_Manager.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 56C94E3A1EEDEF4300A9BC2F /* Delts_Manager.xcdatamodeld */; };
@@ -39,6 +41,8 @@
 		566379801EFB7E9C005EB635 /* DutiesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DutiesViewController.swift; sourceTree = "<group>"; };
 		566379821EFB7EC9005EB635 /* PuntsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PuntsViewController.swift; sourceTree = "<group>"; };
 		566379841EFB7EEA005EB635 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		56A3865E1EFF174700CCD3A7 /* DMCard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DMCard.swift; sourceTree = "<group>"; };
+		56A386601F02004B00CCD3A7 /* DMToolbarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DMToolbarController.swift; sourceTree = "<group>"; };
 		56C94E301EEDEF4300A9BC2F /* Delts Manager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Delts Manager.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		56C94E331EEDEF4300A9BC2F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		56C94E381EEDEF4300A9BC2F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -84,6 +88,7 @@
 				566379771EFB78E4005EB635 /* Parties */,
 				566379781EFB78EB005EB635 /* Settings */,
 				5663797C1EFB7A28005EB635 /* TabBarController.swift */,
+				56A386601F02004B00CCD3A7 /* DMToolbarController.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -100,6 +105,7 @@
 			isa = PBXGroup;
 			children = (
 				5663797E1EFB7B47005EB635 /* OverviewViewController.swift */,
+				56A3865E1EFF174700CCD3A7 /* DMCard.swift */,
 			);
 			name = Overview;
 			sourceTree = "<group>";
@@ -353,6 +359,7 @@
 				5663797D1EFB7A28005EB635 /* TabBarController.swift in Sources */,
 				56C94E4C1EEE39B000A9BC2F /* Constants.swift in Sources */,
 				48C9C39F1EEE3E4D006DD963 /* Duty.swift in Sources */,
+				56A386611F02004B00CCD3A7 /* DMToolbarController.swift in Sources */,
 				56C94E4A1EEE23F600A9BC2F /* DMUser.swift in Sources */,
 				56C94E3C1EEDEF4300A9BC2F /* Delts_Manager.xcdatamodeld in Sources */,
 				56C94E691EEF8CF400A9BC2F /* Errors.swift in Sources */,
@@ -361,6 +368,7 @@
 				5663797F1EFB7B48005EB635 /* OverviewViewController.swift in Sources */,
 				56D2ECAF1EF5B13D00DF8A7C /* Session.swift in Sources */,
 				56C94E341EEDEF4300A9BC2F /* AppDelegate.swift in Sources */,
+				56A3865F1EFF174700CCD3A7 /* DMCard.swift in Sources */,
 				566379851EFB7EEA005EB635 /* SettingsViewController.swift in Sources */,
 				56C94E6B1EEF9DEF00A9BC2F /* Extensions.swift in Sources */,
 				566379831EFB7EC9005EB635 /* PuntsViewController.swift in Sources */,

@@ -9,6 +9,7 @@
 import UIKit
 import Firebase
 import SwiftyJSON
+import Material
 
 class LoginViewController: UIViewController {
 
@@ -52,7 +53,12 @@ class LoginViewController: UIViewController {
     func completeLogin() {
         print(Session.session.owner?.fullName ?? "")
         
-        let controller = TabBarController(viewControllers: [OverviewViewController(), DutiesViewController(), PuntsViewController(), SettingsViewController()])
+//        let controller = TabBarController(viewControllers: [OverviewViewController(), DutiesViewController(), PuntsViewController(), SettingsViewController()])
+        
+        
+//        self.navigationController?.pushViewController(controller, animated: true)
+        
+        let controller = self.storyboard?.instantiateViewController(withIdentifier: Constants.Identifiers.Controllers.TabBarController) as! TabBarController
         
         self.navigationController?.pushViewController(controller, animated: true)
     }
