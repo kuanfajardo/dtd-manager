@@ -112,20 +112,20 @@ class DMCard: Card {
         
         if let moreDetailFunc = self.dataSource?.moreDetailForCard {
             self.moreDetailLabel?.text = moreDetailFunc(self)
-            self.contentView = self.contentLabel
-        } else {
-            self.contentView = nil
         }
         
         if let contentFunc = self.dataSource?.contentForCard {
             self.contentLabel?.text = contentFunc(self)
+            self.contentView = self.contentLabel
             self.toolbarEdgeInsets.bottom = 10
             
         } else {
+            self.contentView = nil
             self.toolbarEdgeInsets.bottom = 15
         }
         
         self.setNeedsDisplay();
+        self.setNeedsLayout()
     }
 
     

@@ -22,7 +22,7 @@ class OverviewViewController: UIViewController, DMCardDelegate {
         let card = DMDutyCard()
         card.delegate = self
         
-        let testDuty = Duty(dutyName: "Kitchen", date: Date(), description: "Wash the dishes, mop the floors, put away the food.", status: .checkoffRequested, assignee: DMUser.init(name: "Erick Friis"), checkOffTime: nil, checker: DMUser(name: "Juan Fajardo"), id: 0)
+        let testDuty = Duty(dutyName: "Kitchen", date: Date(), description: "Wash the dishes, mop the floors, put away the food.", status: .complete, assignee: DMUser.init(name: "Erick Friis"), checkOffTime: nil, checker: DMUser(name: "Juan Fajardo"), id: 0)
         
         card.dataSource = testDuty
         
@@ -94,5 +94,4 @@ class OverviewViewController: UIViewController, DMCardDelegate {
 //        }
         
     }
-
 }
