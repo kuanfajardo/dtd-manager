@@ -22,11 +22,11 @@ class Duty {
     var checker: DMUser?
     
     // Initialization
-    init(dutyName: String, date: Date, description: String, status: String, assignee: DMUser, checkOffTime: Date, checker: DMUser, id: Int) {
+    init(dutyName: String, date: Date, description: String, status: Constants.DutyStatus, assignee: DMUser, checkOffTime: Date?, checker: DMUser, id: Int) {
         self.dutyName = dutyName
         self.date = date
         self.description = description
-        self.status = .incomplete
+        self.status = status
         self.assignee = assignee
         self.checkOffTime = checkOffTime
         self.checker = checker
