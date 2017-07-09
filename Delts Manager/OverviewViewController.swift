@@ -9,7 +9,7 @@
 import UIKit
 import Material
 
-class OverviewViewController: UIViewController, DMDutyCardDelegate {
+class OverviewViewController: UIViewController, DMCardDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,7 +22,9 @@ class OverviewViewController: UIViewController, DMDutyCardDelegate {
         let card = DMDutyCard()
         card.delegate = self
         
-        card.duty = Duty(dutyName: "Kitchen", date: Date(), description: "Wash the dishes, mop the floors, put away the food.", status: .checkoffRequested, assignee: DMUser.init(name: "Erick Friis"), checkOffTime: nil, checker: DMUser(name: "Juan Fajardo"), id: 0)
+        let testDuty = Duty(dutyName: "Kitchen", date: Date(), description: "Wash the dishes, mop the floors, put away the food.", status: .checkoffRequested, assignee: DMUser.init(name: "Erick Friis"), checkOffTime: nil, checker: DMUser(name: "Juan Fajardo"), id: 0)
+        
+        card.dataSource = testDuty
         
         let card3 = DMPuntCard()
         
@@ -59,39 +61,38 @@ class OverviewViewController: UIViewController, DMDutyCardDelegate {
     
     
     // MARK: DMCardDelegate
-    func cardDidTapCheckoffButton(_ card: DMDutyCard) {
+    func cardDidTapButton(_ card: DMCard) {
         
-        switch card.checkoffButton!.backgroundColor! {
-        case UIColor.flatWhite:
-            if card.checkoffButton!.image! == Icon.bell {
-                card.checkoffButton?.backgroundColor = UIColor.flatPurple
-                card.checkoffButton?.tintColor = UIColor.white
-            } else {
-                card.checkoffButton?.backgroundColor = UIColor.flatMint
-                card.checkoffButton?.tintColor = UIColor.white
-            }
-            
-            break
-            
-        case UIColor.flatPurple:
-            card.checkoffButton?.backgroundColor = UIColor.flatWhite
-            card.checkoffButton?.image = Icon.check
-            card.checkoffButton?.tintColor = UIColor.white
-            break
-        case UIColor.flatMint:
-            card.checkoffButton?.backgroundColor = UIColor.flatWatermelon
-            card.checkoffButton?.image = Icon.close
-            break
-            
-        case UIColor.flatWatermelon:
-            card.checkoffButton?.backgroundColor = UIColor.flatWhite
-            card.checkoffButton?.image = Icon.bell
-            card.checkoffButton?.tintColor = UIColor.white
-        default:
-            break
-        }
+//        switch card.checkoffButton!.backgroundColor! {
+//        case UIColor.flatWhite:
+//            if card.checkoffButton!.image! == Icon.bell {
+//                card.checkoffButton?.backgroundColor = UIColor.flatPurple
+//                card.checkoffButton?.tintColor = UIColor.white
+//            } else {
+//                card.checkoffButton?.backgroundColor = UIColor.flatMint
+//                card.checkoffButton?.tintColor = UIColor.white
+//            }
+//            
+//            break
+//            
+//        case UIColor.flatPurple:
+//            card.checkoffButton?.backgroundColor = UIColor.flatWhite
+//            card.checkoffButton?.image = Icon.check
+//            card.checkoffButton?.tintColor = UIColor.white
+//            break
+//        case UIColor.flatMint:
+//            card.checkoffButton?.backgroundColor = UIColor.flatWatermelon
+//            card.checkoffButton?.image = Icon.close
+//            break
+//            
+//        case UIColor.flatWatermelon:
+//            card.checkoffButton?.backgroundColor = UIColor.flatWhite
+//            card.checkoffButton?.image = Icon.bell
+//            card.checkoffButton?.tintColor = UIColor.white
+//        default:
+//            break
+//        }
         
     }
-    
 
 }

@@ -11,27 +11,37 @@ import UIKit
 import Material
 import ChameleonFramework
 
-@objc
-protocol DMDutyCardDelegate {
-    @objc func cardDidTapCheckoffButton(_ card: DMDutyCard)
-}
 
 @objc
-protocol DMPuntCardDelegate {
-//    @objc func cardDidTapCheckoffButton(_ card: DMDutyCard)
-}
-
-
-class DMDutyCard: Card {
+protocol DMCardDataSource {
+    func titleForCard(_ card: DMCard) -> String
+    func detailForCard(_ card: DMCard) -> String
+    func buttonImageForCard(_ card: DMCard) -> UIImage?
     
-    var duty: Duty? {
+    @objc optional func contentForCard(_ card: DMCard) -> String
+    @objc optional func moreDetailForCard(_ card: DMCard) -> String
+    @objc optional func buttonBackgroundColorForCard(_ card: DMCard) -> UIColor
+}
+
+@objc
+protocol DMCardDelegate {
+    @objc func cardDidTapButton(_ card: DMCard)
+}
+
+class DMCard: Card {
+    var priority: Int = 0;
+    
+    var button: FABButton?
+    var contentLabel: UILabel?
+    var moreDetailLabel: UILabel?
+    
+    var dataSource: DMCardDataSource? {
         didSet {
-            self.refreshLayout()
+            self.refresh()
         }
     }
-    var delegate: DMDutyCardDelegate?
-    var checkoffButton: FABButton?
-    var timer: Timer?
+    
+    var delegate: DMCardDelegate?
     
     convenience init() {
         self.init(frame: .zero)
@@ -41,24 +51,22 @@ class DMDutyCard: Card {
         super.init(frame: frame)
         
         // Checkoff Button
-        let checkoffButton = FABButton(image: Icon.bell, tintColor: UIColor.white)
-        checkoffButton.backgroundColor = UIColor.flatWhite
-        checkoffButton.pulseColor = UIColor.flatBlack
+        let button = FABButton(image: Icon.bell, tintColor: UIColor.white)
+        button.backgroundColor = UIColor.flatPurple
+        button.pulseColor = UIColor.flatWhite
         
-        checkoffButton.addTarget(self, action: #selector(checkoffButtonPressed), for: .touchUpInside)
+        button.addTarget(self, action: #selector(buttonPressed), for: .touchUpInside)
         
-        self.checkoffButton = checkoffButton
-
-        // Content View
-        let contentView = UILabel()
-        contentView.numberOfLines = 0
-        contentView.text = "Clean the dishes, mop the dining room floor, and bring food down to the kitchen."
-        contentView.font = RobotoFont.regular(with: 14)
+        self.button = button
         
-        self.contentView = contentView
-        self.contentViewEdgeInsetsPreset = .wideRectangle3
-        self.contentViewEdgeInsets.bottom = 20
-
+        // More Detail Label
+        let moreLabel = UILabel()
+        moreLabel.numberOfLines = 0
+        moreLabel.text = ""
+        moreLabel.font = RobotoFont.regular(with: 24)
+        
+        self.moreDetailLabel = moreLabel
+        
         // Toolbar / Title
         let toolbar = Toolbar()
         toolbar.title = "Pantry"
@@ -68,13 +76,75 @@ class DMDutyCard: Card {
         toolbar.detailLabel.textAlignment = .left
         toolbar.detailLabel.textColor = Color.grey.base
         
-        toolbar.rightViews = [checkoffButton]
+        toolbar.rightViews = [self.moreDetailLabel!, self.button!]
         
         self.toolbar = toolbar
         self.toolbarEdgeInsetsPreset = .square3
-        self.toolbarEdgeInsets.bottom = 10
+        self.toolbarEdgeInsets.bottom = 10 // (or 15)
         self.toolbarEdgeInsets.right = 8
         
+        // Content View
+        let contentView = UILabel()
+        contentView.numberOfLines = 0
+        contentView.text = "Clean the dishes, mop the dining room floor, and bring food down to the kitchen."
+        contentView.font = RobotoFont.regular(with: 14)
+        
+        self.contentLabel = contentView
+        self.contentView = self.contentLabel
+        self.contentViewEdgeInsetsPreset = .wideRectangle3
+        self.contentViewEdgeInsets.bottom = 20
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+    }
+    
+    
+    func refresh() {
+        self.toolbar?.detail = self.dataSource?.detailForCard(self)
+        self.toolbar?.title = self.dataSource?.titleForCard(self)
+        
+        self.button?.image = self.dataSource?.buttonImageForCard(self)
+        
+        if let backgroundColorFunc = self.dataSource?.buttonBackgroundColorForCard {
+            self.button?.backgroundColor = backgroundColorFunc(self)
+        }
+        
+        if let moreDetailFunc = self.dataSource?.moreDetailForCard {
+            self.moreDetailLabel?.text = moreDetailFunc(self)
+            self.contentView = self.contentLabel
+        } else {
+            self.contentView = nil
+        }
+        
+        if let contentFunc = self.dataSource?.contentForCard {
+            self.contentLabel?.text = contentFunc(self)
+            self.toolbarEdgeInsets.bottom = 10
+            
+        } else {
+            self.toolbarEdgeInsets.bottom = 15
+        }
+        
+        self.setNeedsDisplay();
+    }
+
+    
+    func buttonPressed() {
+        self.delegate?.cardDidTapButton(self)
+    }
+}
+
+
+class DMDutyCard: DMCard {
+    
+    var timer: Timer?
+    
+    convenience init() {
+        self.init(frame: .zero)
+    }
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
         
         // Pulse Timer
         self.timer = Timer(fireAt: Date.init(timeIntervalSinceNow: 0), interval: 3, target: self, selector: #selector(fire), userInfo: nil, repeats: true)
@@ -86,76 +156,12 @@ class DMDutyCard: Card {
     
     @objc
     func fire() {
-        self.checkoffButton?.pulse()
-    }
-    
-    func refreshLayout() {
-        self.toolbar?.detail = DMDutyCard.toolbarDetailForDuty(self.duty!)
-        self.toolbar?.title = self.duty!.dutyName!
-        
-        self.checkoffButton?.image = DMDutyCard.checkoffImageForDuty(self.duty!)
-        self.checkoffButton?.backgroundColor = DMDutyCard.checkoffBackgroundColorForDuty(self.duty!)
-        
-        let contentView = self.contentView as! UILabel
-        contentView.text = self.duty!.description
-        
-        setNeedsDisplay()
-    }
-    
-    static func toolbarDetailForDuty(_ duty: Duty) -> String {
-        switch duty.status! {
-        case .complete:
-            return "Checked off by \(duty.checker!.fullName)"
-        case .incomplete:
-            return "Due by \(duty.date!) at 11:59 PM"
-        case .late:
-            return "Punted!"
-        case .unassigned:
-            return "-";
-        case .checkoffRequested:
-            return "Checkoff requested. Waiting for checker..."
-        case .pickedUp:
-            return "Picked Up by \(duty.checker!.fullName)"
-        }
-    }
-    
-    static func checkoffImageForDuty(_ duty: Duty) -> UIImage? {
-        switch duty.status! {
-        case .complete, .pickedUp:
-            return Icon.check
-        case .incomplete, .checkoffRequested:
-            return Icon.bell
-        case .late:
-            return Icon.close
-        case .unassigned:
-            return nil
-        }
-    }
-    
-    private static func checkoffBackgroundColorForDuty(_ duty: Duty) -> UIColor {
-        switch duty.status! {
-        case .complete:
-            return UIColor.flatMint
-        case .incomplete, .checkoffRequested:
-            return UIColor.flatPurple
-        case .late:
-            return UIColor.flatWatermelon
-        case .unassigned, .pickedUp:
-            return UIColor.flatWhite
-        }
-    }
-    
-    // Delegate Calls
-    @objc
-    func checkoffButtonPressed() {
-        self.delegate?.cardDidTapCheckoffButton(self)
+        self.button?.pulse()
     }
 }
 
 
-class DMPuntCard: Card {
-    
-    var actionButton: FABButton?
+class DMPuntCard: DMCard {
     
     convenience init() {
         self.init(frame: .zero)
@@ -164,42 +170,10 @@ class DMPuntCard: Card {
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-        // Venmo Button
-        let venmoButton = FABButton(image: #imageLiteral(resourceName: "venmo"))
-        venmoButton.backgroundColor = UIColor.init(red: 0.239, green: 0.584, blue: 0.808, alpha: 1.0)
-        venmoButton.pulseColor = UIColor.white
-        
-        self.actionButton = venmoButton
-        
-        // Other Actions Button
-        let actionButton = FABButton(image: Icon.work, tintColor: UIColor.white)
-        actionButton.backgroundColor = UIColor.flatPurple
-        actionButton.pulseColor = UIColor.white
-        
-        // Content View
-        let contentView = UILabel()
-        contentView.numberOfLines = 0
-        contentView.text = "Pay $25 or submit a punt makeup request to the House Manager"
-        contentView.font = RobotoFont.regular(with: 14)
-        
-        self.contentView = contentView
-        self.contentViewEdgeInsetsPreset = .wideRectangle3
-        self.contentViewEdgeInsets.bottom = 20;
-        
-        // Toolbar / Title View
-        let toolbar = Toolbar()
-        toolbar.title = "Punt!"
-        toolbar.titleLabel.textAlignment = .left
-        toolbar.detail = "Given by Social Chair"
-        toolbar.detailLabel.textAlignment = .left
-        toolbar.detailLabel.textColor = Color.grey.base
-        
-        toolbar.rightViews = [actionButton]
-        
-        self.toolbar = toolbar
-        self.toolbarEdgeInsetsPreset = .square3
-        self.toolbarEdgeInsets.bottom = 10
-        self.toolbarEdgeInsets.right = 8
+        self.button?.image = Icon.work
+        self.contentLabel?.text = "Pay $25 or submit a punt makeup request to the House Manager"
+        self.toolbar?.title = "Punt!"
+        self.toolbar?.detail = "Given by Social Chair"
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -209,9 +183,7 @@ class DMPuntCard: Card {
 
 
 
-class DMDutySheetCard: Card {
-    
-    var actionButton: FABButton?
+class DMDutySheetCard: DMCard {
     
     convenience init() {
         self.init(frame: .zero)
@@ -220,30 +192,12 @@ class DMDutySheetCard: Card {
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-        // Button
-        let actionButton = FABButton(image: Icon.edit, tintColor: UIColor.flatWhite)
-        actionButton.backgroundColor = UIColor.flatPurple
-        actionButton.pulseColor = UIColor.white
-
-        self.actionButton = actionButton
-        
-        // Toolbar / Main View
-        let toolbar = Toolbar()
-        toolbar.title = "Duty Sheet Open!"
-        toolbar.titleLabel.textAlignment = .left
-        
-        toolbar.detail = "Open until Sun @ 12:00 pm"
-        toolbar.detailLabel.textAlignment = .left
-        toolbar.detailLabel.textColor = Color.grey.base
-        
-        toolbar.rightViews = [actionButton]
-        
-        self.toolbar = toolbar
-        self.toolbarEdgeInsetsPreset = .square3
-        self.toolbarEdgeInsets.bottom = 15
-        self.toolbarEdgeInsets.right = 8
-        
-        self.contentViewEdgeInsetsPreset = .wideRectangle3
+        self.button?.image = Icon.edit
+        self.toolbar?.title = "Duty Sheet Open!"
+        self.toolbar?.detail = "Open until Sun @ 12:00 pm"
+        self.contentLabel?.text = ""
+        self.toolbarEdgeInsets.bottom = 15;
+        self.contentView = nil
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -251,9 +205,7 @@ class DMDutySheetCard: Card {
     }
 }
 
-class DMMoneyCard: Card {
-
-    var actionButton: FABButton?
+class DMMoneyCard: DMCard {
     
     convenience init() {
         self.init(frame: .zero)
@@ -262,36 +214,13 @@ class DMMoneyCard: Card {
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-        // Action Button
-        let actionButton = FABButton(image: Icon.moreHorizontal, tintColor: UIColor.white)
-        actionButton.backgroundColor = UIColor.flatPurple
-        actionButton.pulseColor = UIColor.white
-        
-        self.actionButton = actionButton
-        
-        // Money Label
-        let moneyLabel = UILabel()
-        moneyLabel.numberOfLines = 0
-        moneyLabel.text = "$845"
-        moneyLabel.font = RobotoFont.regular(with: 24)
-        
-        // Toolbar
-        let toolbar = Toolbar()
-        toolbar.title = "House Dues"
-        toolbar.titleLabel.textAlignment = .left
-        
-        toolbar.detail = "Due by September 7"
-        toolbar.detailLabel.textAlignment = .left
-        toolbar.detailLabel.textColor = Color.grey.base
-        
-        toolbar.rightViews = [moneyLabel, actionButton]
-        self.toolbar = toolbar
-        
-        self.toolbarEdgeInsetsPreset = .square3
-        self.toolbarEdgeInsets.bottom = 15
-        self.toolbarEdgeInsets.right = 8
-        
-        self.contentViewEdgeInsetsPreset = .wideRectangle3
+        self.button?.image = Icon.moreHorizontal
+        self.moreDetailLabel?.text = "$845"
+        self.toolbar?.title = "House Dues"
+        self.toolbar?.detail = "Due by September 7"
+        self.contentLabel?.text = ""
+        self.toolbarEdgeInsets.bottom = 15;
+        self.contentView = nil
     }
     
     required init?(coder aDecoder: NSCoder) {
