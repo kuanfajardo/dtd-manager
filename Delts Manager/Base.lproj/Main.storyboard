@@ -124,25 +124,24 @@
             </objects>
             <point key="canvasLocation" x="1604" y="986"/>
         </scene>
-        <!--Overview-->
-        <scene sceneID="pHm-Wf-DLM">
+        <!--today-->
+        <scene sceneID="HOw-FW-Kc3">
             <objects>
-                <viewController title="Overview" id="nD5-uB-qMb" customClass="OverviewViewController" customModule="Delts_Manager" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="QG2-Hj-bpa"/>
-                        <viewControllerLayoutGuide type="bottom" id="JjX-Ph-2KT"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="JU4-ZS-S5f">
+                <tableViewController id="atF-oB-4ai" customClass="OverviewViewController" customModule="Delts_Manager" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="150" sectionHeaderHeight="28" sectionFooterHeight="28" id="Bvs-J4-hvz">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="" id="FGU-93-XPw"/>
-                    <navigationItem key="navigationItem" title="today" id="CiE-d0-hRo"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="OwC-HG-deO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                        <connections>
+                            <outlet property="dataSource" destination="atF-oB-4ai" id="cUr-HE-TYa"/>
+                            <outlet property="delegate" destination="atF-oB-4ai" id="ORp-j9-UIG"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="today" id="sU6-lv-x7A"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="e7E-VE-VbW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1604" y="1832"/>
+            <point key="canvasLocation" x="2322.4000000000001" y="1838.2308845577213"/>
         </scene>
         <!--today-->
         <scene sceneID="PfP-3O-R6G">
@@ -154,7 +153,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="nD5-uB-qMb" kind="relationship" relationship="rootViewController" id="QpR-e2-AEq"/>
+                        <segue destination="atF-oB-4ai" kind="relationship" relationship="rootViewController" id="Syp-tt-DIP"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vec-Ha-5EA" userLabel="First Responder" sceneMemberID="firstResponder"/>

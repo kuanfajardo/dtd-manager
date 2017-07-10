@@ -48,6 +48,10 @@ struct Constants {
         struct Controllers {
             static let TabBarController = "tabbarcontroller"
         }
+        
+        struct TableViewCells {
+            static let DMCardCell = "DMCell"
+        }
     }
     
     struct Notifications {

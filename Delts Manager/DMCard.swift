@@ -135,6 +135,23 @@ class DMCard: Card {
 }
 
 
+
+class DMCardTableViewCell: UITableViewCell {
+    var card: DMCard?
+    
+    override func layoutSubviews() {
+        super.layoutSubviews();
+        
+        self.backgroundColor = Color.grey.lighten4
+        
+        if let card = card {
+            self.contentView.layout(card).horizontally(left: 20, right: 20).top(35).bottom(35)
+        }
+    }
+}
+
+
+
 class DMDutyCard: DMCard {
     
     var timer: Timer?
