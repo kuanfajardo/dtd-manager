@@ -38,6 +38,8 @@ class LoginViewController: UIViewController {
     
     // Try to login!
     @IBAction func loginPressed() {
+        self.loginButton.isEnabled = false
+        
         let email = emailTextField.text!;
         let password = passwordTextField.text!;
         
@@ -46,6 +48,7 @@ class LoginViewController: UIViewController {
                 self.completeLogin()
             } else {
                 self.displayError()
+                self.loginButton.isEnabled = true
             }
         }
     }
