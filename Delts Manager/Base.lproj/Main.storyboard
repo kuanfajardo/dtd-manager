@@ -14,7 +14,7 @@
         <scene sceneID="Nq6-dt-dUM">
             <objects>
                 <navigationController navigationBarHidden="YES" id="RFK-Cj-vKr" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="YAM-XB-xzq">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="YAM-XB-xzq">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -105,7 +105,7 @@
             </objects>
             <point key="canvasLocation" x="-938.39999999999998" y="73.313343328335833"/>
         </scene>
-        <!--Item 1-->
+        <!--duties-->
         <scene sceneID="3qW-Vc-QVa">
             <objects>
                 <viewController id="iRB-Fo-5Il" sceneMemberID="viewController">
@@ -118,17 +118,17 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item 1" id="7Xk-B7-8kR"/>
+                    <tabBarItem key="tabBarItem" title="duties" id="7Xk-B7-8kR"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Xdn-gk-fDz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1604" y="986"/>
         </scene>
-        <!--today-->
+        <!--Today-->
         <scene sceneID="HOw-FW-Kc3">
             <objects>
                 <tableViewController id="atF-oB-4ai" customClass="OverviewViewController" customModule="Delts_Manager" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="150" sectionHeaderHeight="28" sectionFooterHeight="28" id="Bvs-J4-hvz">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="150" sectionHeaderHeight="28" sectionFooterHeight="28" id="Bvs-J4-hvz">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -137,7 +137,7 @@
                             <outlet property="delegate" destination="atF-oB-4ai" id="ORp-j9-UIG"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="today" id="sU6-lv-x7A"/>
+                    <navigationItem key="navigationItem" title="Today" id="sU6-lv-x7A"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="e7E-VE-VbW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -146,9 +146,9 @@
         <!--today-->
         <scene sceneID="PfP-3O-R6G">
             <objects>
-                <navigationController title="today" id="Pz2-kN-lcF" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="2yk-a8-SeZ"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="H2R-SQ-iFf">
+                <navigationController title="today" id="Pz2-kN-lcF" customClass="NavigationController" customModule="Material" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="today" id="2yk-a8-SeZ"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="H2R-SQ-iFf">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -160,7 +160,7 @@
             </objects>
             <point key="canvasLocation" x="622" y="1990"/>
         </scene>
-        <!--Item-->
+        <!--parties-->
         <scene sceneID="w5y-99-Q08">
             <objects>
                 <viewController id="0mw-Xv-Xes" sceneMemberID="viewController">
@@ -173,13 +173,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="wQS-da-zvy"/>
+                    <tabBarItem key="tabBarItem" title="parties" id="wQS-da-zvy"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="d0M-ZC-wCk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1604" y="-1764"/>
         </scene>
-        <!--Item-->
+        <!--punts-->
         <scene sceneID="5bg-YS-gcL">
             <objects>
                 <collectionViewController id="wRB-jD-g7P" sceneMemberID="viewController">
@@ -208,7 +208,7 @@
                             <outlet property="delegate" destination="wRB-jD-g7P" id="3ii-LL-1xK"/>
                         </connections>
                     </collectionView>
-                    <tabBarItem key="tabBarItem" title="Item" id="m4a-8u-e1d"/>
+                    <tabBarItem key="tabBarItem" title="punts" id="m4a-8u-e1d"/>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dyZ-Tn-ZuI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -224,7 +224,6 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
-                        <segue destination="Pz2-kN-lcF" kind="relationship" relationship="viewControllers" id="yeb-CS-NTo"/>
                         <segue destination="iRB-Fo-5Il" kind="relationship" relationship="viewControllers" id="hMn-pl-KjP"/>
                         <segue destination="wRB-jD-g7P" kind="relationship" relationship="viewControllers" id="ufz-ug-kat"/>
                         <segue destination="0mw-Xv-Xes" kind="relationship" relationship="viewControllers" id="CNw-WC-BE2"/>

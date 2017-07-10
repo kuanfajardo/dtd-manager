@@ -63,6 +63,9 @@ class LoginViewController: UIViewController {
         
         let controller = self.storyboard?.instantiateViewController(withIdentifier: Constants.Identifiers.Controllers.TabBarController) as! TabBarController
         
+        let navController = TodayNavigationController(rootViewController: OverviewViewController())
+        controller.viewControllers?.insert(navController, at: 0)
+        
         self.navigationController?.pushViewController(controller, animated: true)
     }
     
@@ -97,5 +100,40 @@ extension LoginViewController: UITextFieldDelegate {
         if textField.isFirstResponder {
             textField.resignFirstResponder()
         }
+    }
+}
+
+class TodayNavigationController: NavigationController {
+    open override func prepare() {
+        super.prepare()
+        guard let v = navigationBar as? NavigationBar else {
+            return
+        }
+        
+        v.depthPreset = .none
+        v.dividerColor = Color.grey.lighten3
+        v.backgroundColor = UIColor.flatPurpleDark
+        
+        self.tabBarItem.image = #imageLiteral(resourceName: "today_icon").tint(with: .flatGray)
+        self.tabBarItem.selectedImage = #imageLiteral(resourceName: "today_icon").tint(with: .flatPurple)
+    }
+    
+    override init(rootViewController: UIViewController) {
+        super.init(rootViewController: rootViewController)
+        
+        self.tabBarItem.image = Icon.bell
+        self.tabBarItem.selectedImage = Icon.add
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+    }
+    
+    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
+        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+    }
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
     }
 }
