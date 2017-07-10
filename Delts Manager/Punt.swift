@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import Material
 
 class Punt {
     // Instance variables
@@ -65,5 +66,24 @@ class Punt {
     
     func isMadeUp() -> Bool {
         return self.madeUp!
+    }
+}
+
+
+extension Punt: DMCardDataSource {
+    func titleForCard(_ card: DMCard) -> String {
+        return "Punt!"
+    }
+    
+    func detailForCard(_ card: DMCard) -> String {
+        return "Given by \(self.giver!.fullName)"
+    }
+    
+    func buttonImageForCard(_ card: DMCard) -> UIImage? {
+        return Icon.work
+    }
+    
+    func contentForCard(_ card: DMCard) -> String {
+        return self.comment!
     }
 }
