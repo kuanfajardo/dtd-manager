@@ -72,4 +72,18 @@ class DMUser {
         
         NotificationCenter.default.addObserver(self, selector: #selector(updatePunts), name: Constants.Notifications.DMPuntsUpdatedNotification, object: nil)
     }
+    
+    func isAuthorizedForRole(_ role: Constants.Roles) -> Bool {
+        return self.permissions.contains(role)
+    }
+    
+    func isAuthorizedForRole(_ roles: Constants.Roles...) -> Bool {
+        for role in roles {
+            if self.permissions.contains(role) {
+                return true
+            }
+        }
+        
+        return false
+    }
 }

@@ -28,6 +28,7 @@
 		56C94E6B1EEF9DEF00A9BC2F /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56C94E6A1EEF9DEF00A9BC2F /* Extensions.swift */; };
 		56D2ECAF1EF5B13D00DF8A7C /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D2ECAE1EF5B13D00DF8A7C /* Session.swift */; };
 		56D2ECB11EF75D2200DF8A7C /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D2ECB01EF75D2200DF8A7C /* Data.swift */; };
+		56F95EC41F23C50600868647 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56F95EC31F23C50600868647 /* Event.swift */; };
 		7F28BAAF1EEE3C6300158128 /* Punt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F28BAAE1EEE3C6300158128 /* Punt.swift */; };
 		7F28BAB31EEE41F400158128 /* PartyDuty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F28BAB21EEE41F400158128 /* PartyDuty.swift */; };
 		B94B65221C3AF3369B9BC111 /* Pods_Delts_Manager.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CED3D004C686F5F97D027273 /* Pods_Delts_Manager.framework */; };
@@ -58,6 +59,7 @@
 		56C94E6A1EEF9DEF00A9BC2F /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		56D2ECAE1EF5B13D00DF8A7C /* Session.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
 		56D2ECB01EF75D2200DF8A7C /* Data.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
+		56F95EC31F23C50600868647 /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		7F28BAAE1EEE3C6300158128 /* Punt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Punt.swift; sourceTree = "<group>"; };
 		7F28BAB21EEE41F400158128 /* PartyDuty.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PartyDuty.swift; sourceTree = "<group>"; };
 		CACC291344ABA10935B17954 /* Pods-Delts Manager.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Delts Manager.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Delts Manager/Pods-Delts Manager.debug.xcconfig"; sourceTree = "<group>"; };
@@ -209,6 +211,7 @@
 				48C9C39E1EEE3E4D006DD963 /* Duty.swift */,
 				7F28BAAE1EEE3C6300158128 /* Punt.swift */,
 				7F28BAB21EEE41F400158128 /* PartyDuty.swift */,
+				56F95EC31F23C50600868647 /* Event.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -359,6 +362,7 @@
 				5663797D1EFB7A28005EB635 /* TabBarController.swift in Sources */,
 				56C94E4C1EEE39B000A9BC2F /* Constants.swift in Sources */,
 				48C9C39F1EEE3E4D006DD963 /* Duty.swift in Sources */,
+				56F95EC41F23C50600868647 /* Event.swift in Sources */,
 				56A386611F02004B00CCD3A7 /* DMToolbarController.swift in Sources */,
 				56C94E4A1EEE23F600A9BC2F /* DMUser.swift in Sources */,
 				56C94E3C1EEDEF4300A9BC2F /* Delts_Manager.xcdatamodeld in Sources */,

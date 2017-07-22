@@ -11,34 +11,32 @@ import SwiftyJSON
 import Material
 import ChameleonFramework
 
-class Duty {
+class Duty: Event {
     // Instance variables
-    let id: Int
-    
-    var dutyName: String?
-    var date: Date?
-    var description: String?
     var status: Constants.DutyStatus?
     var assignee: DMUser?
     var checkOffTime: Date?
     var checker: DMUser?
+    var dutyName: String? {
+        return self.title
+    }
     
     // Initialization
     init(dutyName: String, date: Date, description: String, status: Constants.DutyStatus, assignee: DMUser, checkOffTime: Date?, checker: DMUser, id: Int) {
-        self.dutyName = dutyName
+        super.init(id: id, title: dutyName)
+
         self.date = date
         self.description = description
+
         self.status = status
         self.assignee = assignee
         self.checkOffTime = checkOffTime
         self.checker = checker
-        self.id = id
-    }
-    
-    init(id: Int) {
-        self.id = id
     }
 
+    init(id: Int) {
+        super.init(id: id, title: "Duty")
+    }
 }
 
 extension Duty: Equatable {

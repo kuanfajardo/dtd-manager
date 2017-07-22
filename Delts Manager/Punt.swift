@@ -9,11 +9,8 @@
 import Foundation
 import Material
 
-class Punt {
+class Punt: Event {
     // Instance variables
-    let id: Int
-    
-    var date: Date?
     var duty: Duty?
     var comment: String?
     var user: DMUser?
@@ -23,7 +20,8 @@ class Punt {
     
     // Initialization
     init(giver: DMUser, user: DMUser, duty: Duty, comment: String, id: Int) {
-        
+        super.init(id: id, title: "Punt")
+            
         self.date = Date.init()
             
         self.giver = giver
@@ -32,12 +30,10 @@ class Punt {
         self.comment = comment
         
         self.madeUp = false
-        
-        self.id = id
     }
     
     init(id: Int) {
-        self.id = id
+        super.init(id: id, title: "Punt")
     }
     
     func makeUp() -> Void {
