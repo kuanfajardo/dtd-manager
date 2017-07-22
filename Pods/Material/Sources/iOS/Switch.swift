@@ -248,7 +248,7 @@ open class Switch: UIControl {
     open override var intrinsicContentSize: CGSize {
         switch switchSize {
         case .small:
-            return CGSize(width: 24, height: 24)
+            return CGSize(width: 30, height: 24)
         case .medium:
             return CGSize(width: 30, height: 30)
         case .large:

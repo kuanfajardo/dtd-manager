@@ -38,33 +38,33 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PFP-O5-UrG">
-                                <rect key="frame" x="37" y="267" width="301" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Jdfl1996" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PFP-O5-UrG">
+                                <rect key="frame" x="37" y="208" width="301" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a0E-iN-yjz">
-                                <rect key="frame" x="37" y="312" width="301" height="30"/>
+                                <rect key="frame" x="37" y="263" width="301" height="45"/>
                                 <color key="backgroundColor" red="0.15101002156734467" green="0.56891876459121704" blue="0.43715286254882812" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal" title="Login">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="CSX-3V-upx"/>
+                                </constraints>
+                                <state key="normal" title="LOGIN">
                                     <color key="titleColor" red="0.90823972225189209" green="0.92638683319091797" blue="0.9317171573638916" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
                                     <action selector="loginPressed" destination="BYZ-38-t0r" eventType="touchUpInside" id="8KP-YD-5Gg"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dEP-cg-fcY">
-                                <rect key="frame" x="37" y="229" width="301" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="jfajardo@mit.edu" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dEP-cg-fcY">
+                                <rect key="frame" x="37" y="170" width="301" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="delts manager" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="48y-yh-NDb">
-                                <rect key="frame" x="46" y="90" width="152" height="86"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="152" id="nLd-QX-F2L"/>
-                                </constraints>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="delts manager" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="48y-yh-NDb">
+                                <rect key="frame" x="76" y="90" width="222.5" height="43"/>
                                 <fontDescription key="fontDescription" type="system" weight="light" pointSize="36"/>
                                 <color key="textColor" red="0.90823972225189209" green="0.92638683319091797" blue="0.9317171573638916" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -73,15 +73,15 @@
                         <color key="backgroundColor" red="0.27836513519287109" green="0.18530510365962982" blue="0.59323644638061523" alpha="1" colorSpace="calibratedRGB"/>
                         <gestureRecognizers/>
                         <constraints>
+                            <constraint firstItem="48y-yh-NDb" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="0AH-MK-rba"/>
                             <constraint firstItem="dEP-cg-fcY" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="21" id="86J-sa-RXl"/>
                             <constraint firstItem="PFP-O5-UrG" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="21" id="CZN-ir-hec"/>
                             <constraint firstAttribute="trailingMargin" secondItem="PFP-O5-UrG" secondAttribute="trailing" constant="21" id="EBV-Ih-CS5"/>
-                            <constraint firstItem="dEP-cg-fcY" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="209" id="LFU-tx-Y3J"/>
-                            <constraint firstItem="a0E-iN-yjz" firstAttribute="top" secondItem="PFP-O5-UrG" secondAttribute="bottom" constant="15" id="Ppk-KJ-Nsq"/>
+                            <constraint firstItem="dEP-cg-fcY" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="150" id="LFU-tx-Y3J"/>
+                            <constraint firstItem="a0E-iN-yjz" firstAttribute="top" secondItem="PFP-O5-UrG" secondAttribute="bottom" constant="25" id="Ppk-KJ-Nsq"/>
                             <constraint firstItem="48y-yh-NDb" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="70" id="T7s-mO-zYJ"/>
                             <constraint firstItem="PFP-O5-UrG" firstAttribute="top" secondItem="dEP-cg-fcY" secondAttribute="bottom" constant="8" id="Tki-88-Sc7"/>
                             <constraint firstAttribute="trailingMargin" secondItem="dEP-cg-fcY" secondAttribute="trailing" constant="21" id="Vrv-pL-QBD"/>
-                            <constraint firstItem="48y-yh-NDb" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="30" id="eKs-VR-qfa"/>
                             <constraint firstAttribute="trailingMargin" secondItem="a0E-iN-yjz" secondAttribute="trailing" constant="21" id="ewc-z7-pZK"/>
                             <constraint firstItem="a0E-iN-yjz" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="21" id="sMq-ZE-zXK"/>
                         </constraints>
@@ -158,7 +158,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vec-Ha-5EA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="622" y="1990"/>
+            <point key="canvasLocation" x="1604" y="1838"/>
         </scene>
         <!--parties-->
         <scene sceneID="w5y-99-Q08">

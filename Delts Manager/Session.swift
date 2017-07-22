@@ -20,6 +20,10 @@ class Session {
     var isDutySheetAvailable = false
     var allUsers: [DMUser]?
     
+    static var owner: DMUser? {
+        return Session.session.owner
+    }
+    
     static let session = Session() // singleton object
     
     
