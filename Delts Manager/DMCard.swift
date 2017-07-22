@@ -138,6 +138,11 @@ class DMCard: Card {
 
 class DMCardTableViewCell: UITableViewCell {
     var card: DMCard?
+    var delegate: DMCardDelegate? {
+        didSet {
+            self.card?.delegate = self.delegate;
+        }
+    }
     
     override func layoutSubviews() {
         super.layoutSubviews();
@@ -242,5 +247,41 @@ class DMMoneyCard: DMCard {
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
+    }
+}
+
+class DMCheckoffCard: DMCard {
+    var extraButton: FABButton?
+    
+    convenience init() {
+        self.init(frame: .zero)
+    }
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        
+        self.button?.image = Icon.phone
+        self.toolbar?.title = "Checkoff Request"
+        self.toolbar?.detail = "Kitchen - Juan Fajardo"
+        self.contentLabel?.text = ""
+        self.toolbarEdgeInsets.bottom = 15;
+        self.contentView = nil
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+    }
+    
+    
+    func updateToCheckoffView () {
+        if (self.extraButton == nil) {
+            self.button?.image = Icon.check;
+            self.button?.backgroundColor = UIColor.flatMint;
+        
+            self.extraButton = FABButton(image: Icon.close, tintColor: UIColor.white);
+            self.extraButton?.backgroundColor = UIColor.flatWatermelon;
+        
+            self.toolbar?.rightViews.insert(extraButton!, at: 1);
+        }
     }
 }
