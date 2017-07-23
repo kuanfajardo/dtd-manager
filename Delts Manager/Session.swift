@@ -19,6 +19,7 @@ class Session {
     var owner: DMUser? // user currently logged in
     var isDutySheetAvailable = false
     var allUsers: [DMUser]?
+    var currentDutySheet: DutySheet?
     
     static var owner: DMUser? {
         return Session.session.owner

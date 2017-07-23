@@ -75,4 +75,13 @@ struct Constants {
         case delete
     }
     
+    enum Weekday: Int {
+        case sunday = 0
+        case monday = 1
+        case tuesday = 2
+        case wednesday = 3
+        case thursday = 4
+        case friday = 5
+        case saturday = 6
+    }
 }
