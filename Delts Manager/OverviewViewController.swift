@@ -8,14 +8,49 @@
 
 import UIKit
 import Material
+import Graph
 
 class OverviewViewController: UITableViewController, DMCardDelegate {
     
     var checkoffs: [DMCheckoffCard] = [DMCheckoffCard(), DMCheckoffCard()]
     var cards: [DMCard] = [DMPuntCard(), DMDutyCard(), DMDutySheetCard(), DMMoneyCard()]
+    
     fileprivate var addButton: IconButton!
     
-    
+    internal var graph: Graph!
+    internal var search: Search<Entity>!
+    internal var data: [Entity] {
+        guard let owner = search.sync().first else {
+            return [Entity]()
+        }
+        
+        let events = owner.relationship(types: .event).subject(types: .duty, .punt, .partyDuty, .event)
+        
+        return events.sorted { (a, b) -> Bool in
+            return a.createdDate < b.createdDate
+        }
+    }
+
+    internal var events: [Event] {
+        
+        let allEvents = data.map { (entity) -> Event in
+            Event(entity: entity)
+        }
+        var events = [Event]()
+        allEvents.forEach { (event) in
+            event.computePriority()
+            
+            if (true) { // condition for showing on overview
+                events.append(event)
+            }
+        }
+        
+        events.sort { (a, b) -> Bool in
+            return a.priority! < b.priority!
+        }
+        
+        return events
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,6 +58,9 @@ class OverviewViewController: UITableViewController, DMCardDelegate {
         // Do any additional setup after loading the view.
         self.view.backgroundColor = Color.grey.lighten4
         
+        // Model.
+        prepareGraph()
+        prepareSearch()
         
         // Feed.
         prepareAddButton()
@@ -39,13 +77,13 @@ class OverviewViewController: UITableViewController, DMCardDelegate {
             let cell = tableView.dequeueReusableCell(withIdentifier: Constants.Identifiers.TableViewCells.DMCardCell, for: indexPath) as! DMCardTableViewCell
             
             cell.card = self.cards[indexPath.row]
-            cell.card?.delegate = self;
+            cell.delegate = self;
             
             switch indexPath.row {
             case 1:
                 let testDuty = Duty(dutyName: "Kitchen", date: Date(), description: "Wash the dishes, mop the floors, put away the food.", status: .complete, assignee: DMUser.init(name: "Erick Friis"), checkOffTime: nil, checker: DMUser(name: "Juan Fajardo"), id: 0)
                 
-                cell.card?.dataSource = testDuty
+                cell.dataSource = testDuty
                 
             default:
                 break
@@ -56,7 +94,7 @@ class OverviewViewController: UITableViewController, DMCardDelegate {
             let cell = tableView.dequeueReusableCell(withIdentifier: Constants.Identifiers.TableViewCells.DMCardCell, for: indexPath) as! DMCardTableViewCell
             
             cell.card = self.checkoffs[indexPath.row]
-            cell.card?.delegate = self;
+            cell.delegate = self;
             
             return cell;
         }
@@ -159,6 +197,15 @@ extension OverviewViewController {
     }
 }
 
+
+// MARK: Model
+extension OverviewViewController {
+    internal func prepareGraph() {
+        graph = Graph()
+    }
+    
+    internal func prepareSearch() {
+        search = Search<Entity>(graph: graph).for(types: .delt).where(properties: ("isOwner", true))
     }
 }
 

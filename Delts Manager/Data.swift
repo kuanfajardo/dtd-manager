@@ -20,6 +20,7 @@ class Data {
         static let email = "email"
         static let username = "username"
         static let year = "year"
+        static let isOwner = "isOwner"
     }
     
     struct DutyData {
@@ -49,38 +50,35 @@ class Data {
     }
     
     enum DMEntity: String {
-        case user = "User"
         case duty = "Duty"
         case punt = "Punt"
         case partyDuty = "PartyDuty"
         case session = "Session"
+        case event = "Event"
+        case house = "House"
+        case dutySheet = "Duty Sheet"
+        case delt = "Delt"
     }
+
     
-    // (M) : "to many"; (1) : "to one"
-    struct DMRelationships {
-        static let hasDuty = "has_duty"               // User -> Duty (M)
-        static let hasPunt = "has_punt"               // User -> Punt (M)
-        static let hasPartyDuty = "has_party_duty"    // User -> PartyDuty (M)
-        
-        static let assignedTo = "assigned_to_duty"    // PartyDuty -> User (1), Duty -> User (1)
-        static let givenTo = "given_to"               // Punt -> User (1)
-        static let givenBy = "given_by"               // Punt -> User (1)
-        static let checker = "checker"                // Duty -> User (1)
-        
-        static let owner = "owner"                    // Session -> User (1)
-        static let isOwnerOf = "is_owner"             // User -> Session (1)
-        
-        static let hasUser = "has_user"               // Session -> User (M)
-        static let belongsTo = "belongs_to"           // User -> Session (1)
+    enum DMRelationship: String {
+        case event = "Event"
+        case owner = "Owner"
+        case delt = "Delt"
+        case house = "House"
+        case dutySheet = "Duty Sheet"
+        case houseEvent = "House Event"
     }
+
     
     static func createGraphWithOwner(_ owner: DMUser, completion: @escaping (Bool, Error?) -> Void) -> Void{
         let graph = Graph()
         graph.clear()
         
-        let ownerEntity = Entity(type: .user)
-        ownerEntity[UserData.username] = owner.username
+        let ownerEntity = Entity(type: .delt)
+        ownerEntity[UserData.isOwner] = true;
         
+        ownerEntity[UserData.username] = owner.username
         ownerEntity[UserData.id] = owner.id
         ownerEntity[UserData.email] = owner.email
         ownerEntity[UserData.first] = owner.firstName
@@ -88,20 +86,72 @@ class Data {
         ownerEntity[UserData.permissions] = owner.permissions
         ownerEntity[UserData.year] = owner.year
         
+        
+        // DUTIES //
+        let duties = Session.session.loadDuties()
+        
+        duties.forEach { (duty) in
+            let dutyEntity = Entity(type: .duty)
+            dutyEntity.is(relationship: .event).in(object: ownerEntity)
+        }
+        
+        
+        // PUNTS //
+        let punts = Session.session.loadPunts()
+        
+        punts.forEach { (punt) in
+            let puntEntity = Entity(type: .punt)
+            puntEntity.is(relationship: .event).in(object: ownerEntity)
+            
+            // TODO: Make Punt Object from Entity; store in Session
+        }
+        
+        
+        // PARTY DUTIES //
+        let partyDuties: [PartyDuty] = [] // Session.session.loadPartyDuties()
+        
+        partyDuties.forEach { (partyDuty) in
+            let partyDutyEntity = Entity(type: .partyDuty)
+            partyDutyEntity.is(relationship: .event).in(object: ownerEntity)
+            
+            // TODO: Make Party Duty Object from Entity; store in Session
+        }
+        
+        
+        // EVENTS //
+        let events: [Event] = [] // Session.session.loadEvents()
+        
+        events.forEach { (event) in
+            let eventEntity = Entity(type: .event)
+            eventEntity.is(relationship: .event).in(object: ownerEntity)
+            
+            // TODO: Make Event Object from Entity; store in Session
+        }
+        
+        
+        let houseEntity = Entity(type: .house)
+
+        
+        // DUTY SHEET //
+        let dutySheet = Session.session.loadDutySheet()
+        
+        let dutySheetEntity = Entity(type: .dutySheet)
+        dutySheetEntity.is(relationship: .dutySheet).in(object: houseEntity)
+        // TODO: Make DutySheet Object from Entity; store in Session
+        
+        dutySheet.duties.forEach { (duty) in
+            let dutyEntity = Entity(type: .duty)
+            dutyEntity.is(relationship: .event).in(object: dutySheetEntity)
+            
+            // TODO: Make DutySheetDuty Object from Entity; store in Session
+        }
+        
+        
         let graphSession = Entity(type: .session)
-        ownerEntity.is(relationship: DMRelationships.isOwnerOf).in(object: graphSession)
-        graphSession.is(relationship: DMRelationships.owner).in(object: ownerEntity) // inverse of above; TODO: needed?
-        
-        ownerEntity.is(relationship: DMRelationships.belongsTo).in(object: graphSession)
-        graphSession.is(relationship: DMRelationships.hasUser).in(object: ownerEntity) // inverse of above; TODO: needed?
-        
+
+        ownerEntity.is(relationship: .owner).in(object: graphSession)
+        houseEntity.is(relationship: .house).in(object: graphSession)
+
         graph.sync(completion)
-    }
-}
-
-
-extension Entity {
-    convenience init(type: Data.DMEntity) {
-        self.init(type: type.rawValue)
     }
 }

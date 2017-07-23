@@ -140,7 +140,13 @@ class DMCardTableViewCell: UITableViewCell {
     var card: DMCard?
     var delegate: DMCardDelegate? {
         didSet {
-            self.card?.delegate = self.delegate;
+            self.card?.delegate = self.delegate
+        }
+    }
+    
+    var dataSource: DMCardDataSource? {
+        didSet {
+            self.card?.dataSource = self.dataSource
         }
     }
     

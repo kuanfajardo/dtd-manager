@@ -37,6 +37,25 @@ class Duty: Event {
     init(id: Int) {
         super.init(id: id, title: "Duty")
     }
+    
+    convenience init(json: JSON, id: Int) {
+        let dutyName = Session.session.dutyNameForID(json["duty"].stringValue)
+        let dateString = json["date"].stringValue
+        let description = json["description"].stringValue
+        let status = Constants.DutyStatus(rawValue: json["status"].stringValue)!
+        let assignee = Session.session.owner!
+        let checkTimeString = json["checktime"].stringValue
+        let checkerName = Session.session.deltForUsername(json["checker"].stringValue)
+        
+        let df = DateFormatter()
+        df.locale = Locale(identifier: "en_US_POSIX")
+        df.dateFormat = "yyyy-MM-dd HH:mm:ss"
+        
+        let date = df.date(from: dateString)
+//        let checkDate = 
+        
+        self.init(dutyName: dutyName, date: date!, description: description, status: status, assignee: assignee, checkOffTime: nil, checker: DMUser(name: checkerName), id: id)
+    }
 }
 
 extension Duty: Equatable {

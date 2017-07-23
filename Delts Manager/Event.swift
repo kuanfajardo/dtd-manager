@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import Graph
 
 class Event {
     // Instance variables
@@ -15,9 +16,20 @@ class Event {
     
     var date: Date?
     var description: String?
+    var priority: Int?
     
     init(id: Int, title: String) {
         self.id = id
         self.title = title
+    }
+    
+    init(entity: Entity) {
+        self.id = entity["id"] as! Int
+        self.title = entity["title"] as! String
+        self.priority = entity["priority"] as? Int
+    }
+    
+    func computePriority() {
+        
     }
 }

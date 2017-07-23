@@ -13,13 +13,42 @@ import Firebase
 
 class Session {
     // Constants
+    private let ALL_USERS = Constants.db.child("users")
     private let DUTIES_NODE = Constants.db.child("houseduties")
+    private let DUTYSHEET_NODE = Constants.db.child("housedutieslkp").child("is_duty_sheet_available")
+    private var USER_DUTIES: DatabaseReference? {
+        guard let username = self.owner?.username else {
+            return nil
+        }
+        
+        return Constants.db.child("users/\(username)/duties")
+    }
+    
+    private var USER_PUNTS: DatabaseReference? {
+        guard let username = self.owner?.username else {
+            return nil
+        }
+        
+        return Constants.db.child("users/\(username)/punts")
+    }
+    
+    private var USER_EVENTS: DatabaseReference? {
+        guard let username = self.owner?.username else {
+            return nil
+        }
+        
+        return Constants.db.child("users/\(username)/events")
+    }
+
+    
     
     // Properties
     var owner: DMUser? // user currently logged in
     var isDutySheetAvailable = false
     var allUsers: [DMUser]?
-    var currentDutySheet: DutySheet?
+    var currentDutySheet: DutySheet? {
+        return self.loadDutySheet()
+    }
     
     static var owner: DMUser? {
         return Session.session.owner
@@ -53,9 +82,7 @@ class Session {
     
     // Listener for Duties
     private func startDutiesObserver() -> Void {
-        let userDutiesNode = Constants.db.child("users").child((self.owner?.username)!).child("duties")
-        
-        userDutiesNode.observe(.value, with: { (snapshot) in
+        USER_DUTIES!.observe(.value, with: { (snapshot) in
             // Get new updated list of duties
             let updatedDuties = snapshot.json.arrayObject as? [String] ?? []
             let userInfo = ["payload" : updatedDuties]
@@ -69,9 +96,7 @@ class Session {
     
     // Listener for Punts
     private func startPuntsObserver() -> Void {
-        let userPuntsNode = Constants.db.child("users").child((self.owner?.username)!).child("punts")
-        
-        userPuntsNode.observe(.value, with: { (snapshot) in
+        USER_PUNTS!.observe(.value, with: { (snapshot) in
             // Get new updated list of punts
             let updatedPunts = snapshot.json.arrayObject as? [String] ?? []
             let userInfo = ["payload" : updatedPunts]
@@ -85,9 +110,7 @@ class Session {
     
     // Listener for Duty Sheet Availability
     private func startDutySheetAvailabilityObserver() -> Void {
-        let dutySheetNode = Constants.db.child("duty_sheet").child("is_available")
-        
-        dutySheetNode.observe(.value, with: { (snapshot : DataSnapshot) in
+        DUTYSHEET_NODE.observe(.value, with: { (snapshot : DataSnapshot) in
             // Get new availability of duty sheet
             self.isDutySheetAvailable = snapshot.json.bool!
             
@@ -156,6 +179,21 @@ class Session {
     }
     
     
+    ////
+    
+    var dutyNames: [String : String] = [:]
+    var deltDict: [String : String] = [:]
+    
+    func dutyNameForID(_ id: String) -> String {
+        return dutyNames[id]!
+    }
+    
+    func deltForUsername(_ username: String) -> String {
+        return deltDict[username]!
+    }
+    
+    
+    ////
     
     
     //--------------------------------------------+
@@ -170,15 +208,34 @@ class Session {
     // GET
     
     func loadDuties() -> [Duty] {
-        return []
+        var duties: [Duty] = []
+        
+        USER_DUTIES!.observeSingleEvent(of: .value) { (snapshot: DataSnapshot) in
+            let json = snapshot.json
+            let duty_ids = json.arrayObject as! [Int]
+
+            duty_ids.forEach({ (id) in
+                
+                let dutyNode = self.DUTIES_NODE.child("\(id)")
+                    
+                dutyNode.observeSingleEvent(of: .value, with: { (snapshot: DataSnapshot) in
+                    let json = snapshot.json
+                    let duty = Duty(json: json, id: id)
+                    
+                    duties.append(duty)
+                })
+            })
+        }
+        
+        return duties
     }
     
     func loadPunts() -> [Punt] {
         return []
     }
     
-    func loadDutySheet() -> Void { // TODO: DutySheet type
-        
+    func loadDutySheet() -> DutySheet {
+        return DutySheet(duties: [.init(name: "Basement", days: [.sunday])])
     }
     
     func loadParties() -> Void { // TODO: Party type
@@ -188,6 +245,7 @@ class Session {
     func loadInviteList(forParty party: Int) {
         
     }
+
     
     
     // POST
@@ -197,7 +255,13 @@ class Session {
     }
     
     func claimDuty(_ duty: Duty, callback: (_ success: Bool) -> Void) -> Void {
-        
+        USER_DUTIES?.setValue(2, withCompletionBlock: { (error: Error?, ref: DatabaseReference) in
+            if (error == nil) {
+                // SUCCESS
+            } else {
+                // SHOW USER DUTY ALREADY TAKEN
+            }
+        })
     }
     
     func disclaimDuty(_ duty: Duty, callback: (_ success: Bool) -> Void) -> Void {
